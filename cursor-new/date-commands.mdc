@@ -1,0 +1,50 @@
+---
+description: Date Commands Reference for All Rules
+globs: ["**/*.md", "**/*.py", "**/*.js", "**/*.ts", "**/*.java", "**/*.go", "**/*.rs"]
+alwaysApply: false
+---
+
+# Date Commands Reference
+
+## Purpose
+Centralized reference for date and time commands used across all cursor rules to ensure consistency and avoid duplication.
+
+## Date Commands
+
+### Mac (Unix/Linux)
+```bash
+date "+%Y-%m-%d %H:%M:%S"
+```
+**Output Example**: `2025-09-07 22:18:57`
+
+### Windows CMD
+```cmd
+echo %date% %time%
+```
+**Output Example**: `2025-09-07 22:18:57`
+
+### Windows PowerShell
+```powershell
+(Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
+```
+**Output Example**: `2025-09-07 22:18:57`
+
+## Usage Instructions
+
+### When to Use
+- **Story Cards**: Start Date, End Date, Created Date
+- **SPIKE Documents**: Created Date
+- **Backlog Items**: Created Date (required for aging calculation)
+- **Test Cases**: Created Date
+- **Any Document**: When timestamp is needed
+
+### Format Standard
+All date fields use the standardized format: **`yyyy-MM-dd HH:mm:ss`**
+
+### Integration
+- Run the appropriate command for your operating system
+- Copy the output directly into the date field
+- Ensure consistency across all documents
+
+## Reference Usage
+When creating any document that requires dates, refer to this centralized reference instead of duplicating the commands.

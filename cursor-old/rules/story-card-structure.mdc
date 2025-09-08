@@ -1,0 +1,18 @@
+---
+description: Story Card Structure
+globs: ["tasks/*.md"]
+alwaysApply: false
+---
+- Each story card must follow the template: Story ID, Title, Story Points (S/M/L), Priority (High/Medium/Low), Status
+- Story status workflow: Not Started → Pending PO Approval → Dev In Progress → Testing In Progress → Pending PO Accepted → Done
+- Write user story in format: "As a [user type], I want [feature] so that [benefit]"
+- Create clear, testable acceptance criteria using Given-When-Then format when appropriate
+- Map test cases to specific acceptance criteria (TC1 → AC1, TC2 → AC1, TC3 → AC2, etc.)
+- Include dependencies section with external and internal dependencies linked to story cards
+- Document impact assessment for all dependencies
+- Define "Done" criteria: all acceptance criteria met, tests pass, code review completed, documentation updated, no critical bugs
+- Place story cards in `tasks/` folder with naming convention `story_[ID]_[title].md`
+- Update story status throughout development process
+- Ensure all acceptance criteria are met before marking as Done
+- Include notes section for additional context, dependencies, or technical considerations
+- When the story card has picked up for developing, please include start date time and once it has completed developing, include a end date time in Singapore time. Include duration of the development once it has completed developing. 

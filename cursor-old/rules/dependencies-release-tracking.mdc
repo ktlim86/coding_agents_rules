@@ -1,0 +1,23 @@
+---
+description: Dependencies Release, Management and Tracking
+globs:
+alwaysApply: false
+---
+- Include dependencies section in each story card with external and internal dependencies
+- Link dependencies to story cards (e.g., "FastAPI - Story: STORY_001")
+- Document impact assessment for all dependencies
+- Maintain simple dependencies tracking table with status and impact
+- Create release notes with version, date, and release name
+- Include new features, technical improvements, bug fixes, and dependencies added/updated
+- Reference story cards in release notes (e.g., "Story: STORY_XXX")
+- Document breaking changes and provide migration guides
+- Identify all dependencies before development starts
+- Link dependencies to related story cards for traceability
+- Assess potential impact on existing features
+- Plan integration strategy for dependencies
+- Track dependency status changes during development
+- Document dependency-related issues encountered
+- Update story cards with dependency information
+- Document all dependency changes in release notes
+- Review actual vs. predicted impact after release
+- Schedule future dependency updates as needed

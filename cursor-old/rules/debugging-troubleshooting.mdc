@@ -1,0 +1,63 @@
+---
+description: Debugging and Troubleshooting
+globs:
+alwaysApply: false
+---
+# Debugging and Troubleshooting Guidelines for comprehensive problem analysis and root cause identification
+
+- For debugging and troubleshooting (both testing and production code), think deeply and uncover all dependencies to understand how the code works
+- Comprehensive analysis and root cause identification are mandatory before proposing solutions
+- Before proposing any solution, gather concrete evidence from codebase
+- Use "Show me the code" approach - reference specific files, functions, and line numbers
+- Present multiple solution approaches with evidence-based analysis
+- Get user confirmation on root cause analysis before proceeding with fixes
+- Research and provide web references for all external solutions, libraries, or troubleshooting approaches
+- Include official documentation, Stack Overflow discussions, or authoritative sources for debugging techniques
+- Map out all dependencies, imports, and external services to understand the complete system
+- Trace data flow through the entire system to identify bottlenecks and issues
+- Understand the complete execution path and control flow of the problematic code
+- Analyze how state is managed and transformed throughout the system
+- Understand how errors propagate through the system and identify propagation points
+- Distinguish between symptoms and underlying causes - focus on root causes
+- Identify the complete dependency chain that leads to the issue
+- Consider timing-related issues such as race conditions and async operations
+- Check for resource constraints including memory, CPU, network, and database limitations
+- Verify configuration settings and environment variables that may affect the system
+- Use bottom-up analysis: start from the error and trace backwards through the code
+- Use top-down analysis: start from the entry point and trace forwards to the error
+- Compare with working code or previous versions to identify differences
+- Examine logs systematically for patterns and anomalies that indicate the problem
+- Compare development, staging, and production environments for differences
+- Use comprehensive logging to trace execution flow and identify where issues occur
+- Set strategic breakpoints to examine state at key points in the execution
+- Examine data structures and values at each step to identify corruption or unexpected values
+- Use profiling tools to identify performance bottlenecks and resource issues
+- Check for memory leaks and inefficient memory usage patterns
+- Form multiple hypotheses about the root cause and test each systematically
+- Gather evidence to support or refute each hypothesis before proceeding
+- Test fixes incrementally to isolate the problem and avoid introducing new issues
+- Ensure fixes don't introduce new issues through comprehensive regression testing
+- Document the problem, analysis process, and solution for future reference
+- Check external API responses and error handling for integration issues
+- Verify database connections, queries, and data integrity for data-related problems
+- Check network connectivity and latency for communication issues
+- Verify access controls and permissions for authentication/authorization problems
+- Check input validation and data transformation for data processing issues
+- Look for race conditions and thread safety issues in concurrent code
+- Check for resource exhaustion including memory, connections, and other system resources
+- Consider multiple solution approaches and evaluate the impact of each
+- Assess risks associated with each solution before implementation
+- Plan how to test the solution thoroughly before deployment
+- Have a rollback plan ready in case the solution fails or introduces new issues
+- Root Cause Analysis: Identify actual problem, not symptoms
+- Incremental Fixing: One change at a time, test after each
+- Rollback Strategy: Always have way to revert changes
+- User Communication: Explain issues and solutions before implementing
+- Solution Validation: Present evidence that proposed solution addresses root cause
+- Implementation Confirmation: Get user approval before implementing any fix
+- Web Reference Validation: Ensure all external solutions have current, authoritative web references
+- Have a rollback plan ready in case the solution fails or introduces new issues
+- Root Cause Analysis: Identify actual problem, not symptoms
+- Incremental Fixing: One change at a time, test after each
+- Rollback Strategy: Always have way to revert changes
+- User Communication: Explain issues and solutions before implementing

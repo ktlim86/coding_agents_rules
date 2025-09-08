@@ -1,0 +1,23 @@
+---
+description: MVP Priniciples
+globs:
+alwaysApply: false
+---
+- Treat each feature as an MVP: focus on core functionality first
+- Avoid over-engineering: implement only what is necessary to meet acceptance criteria
+- Use iterative development: build incrementally, validate, then enhance
+- Prioritize user value over technical elegance
+- Choose the simplest approach that meets requirements
+- Follow YAGNI (You Aren't Gonna Need It): don't build features you don't need yet
+- Apply KISS (Keep It Simple, Stupid): prefer simple solutions over complex ones
+- Ensure single responsibility: each component should have one clear purpose
+- Avoid premature optimization: optimize only when there's a proven need
+- Question every abstraction: ensure abstractions provide real value
+- MVP criteria: core functionality works, user can complete primary use case, no unnecessary features
+- MVP must be clean, maintainable, performant, and secure
+- Create POCs for new technologies, complex integrations, unproven solutions, high-risk features
+- Place all POC code in `demo/` folder with proper documentation
+- Include setup instructions, dependencies, lessons learned, and recommendations for POCs
+- Do not merge POC code into main codebase without proper review
+- Track story completion rate, cycle time, test coverage, bug rate, and velocity
+- Conduct weekly status updates, sprint retrospectives, and regular process reviews

@@ -1,0 +1,57 @@
+---
+description: Testing guideline
+globs: ["tests/**/*"]
+alwaysApply: false
+---
+- For each story card with acceptance criteria, code must be developed and tested sufficiently to comply with the tasks. `@compliance-requirements.mdc`
+- Test cases must be small and easy to test, mirroring production data structure and behavior
+- Test execution should be fast (e.g., 10 lines of code should test in <1 second)
+- Tests should allow parameterization to test different scenarios with the same test code
+- Minimize mocking unless there is clear justification (e.g., external APIs, time-dependent operations)
+- Avoid over-mocking internal business logic or simple data transformations
+- All acceptance criteria must have corresponding test cases
+- Include tests for boundary conditions, error scenarios, and edge cases
+- Test integration with external services and databases
+- Test data validation and error handling thoroughly
+- Follow AAA pattern (Arrange-Act-Assert) for test structure
+- Use descriptive test names that clearly describe what is being tested
+- Ensure each test is independent and does not rely on other tests
+- Tests should clean up after themselves to maintain isolation
+- Tests should provide quick feedback during development
+- Tests should run efficiently in continuous integration
+- Tests should not consume excessive memory or CPU resources
+- Use realistic test data that represents production scenarios
+- Ensure test data does not interfere with other tests
+- Tests should start with a known, consistent state
+- All test cases should be written in tests folder in the root directory.
+- All test cases should be executed in the root directory. 
+- All test cases should be run using this command python -m pytest tests/test_phase3_components.py -v --tb=short
+- Establish baseline by running full test suite before making any code changes
+- Document current test results and functionality before modifications
+- Identify critical paths and existing functionality that must not be broken
+- Create test plan for validating changes before implementation
+- Run existing test suite after each change to ensure no regression
+- Incremental testing after each modification to catch issues early
+- Regression testing to ensure existing functionality continues to work
+- Integration testing to verify components work together after changes
+- Performance testing if performance characteristics are affected by changes
+- Immediate rollback if tests fail after any code modifications
+- Root cause analysis before attempting changes again
+- Document lessons learned to prevent future breaking changes
+- Test existing functionality first before making any enhancements
+- Verify current behavior works as expected before modifications
+- Create baseline of current behavior before any code changes
+- Ensure all existing tests pass after any modifications
+- Validate that changes preserve backward compatibility
+- Test integration points that may be affected by changes
+- Verify that existing user workflows continue to function
+- Confirm that database schemas and data structures remain intact
+- Test that existing API endpoints continue to work as expected
+- Validate that configuration files and environment variables are not affected
+- Ensure that existing logging and monitoring continue to function
+- Test that error handling and edge cases remain robust
+- Verify that performance benchmarks are maintained or improved
+- Confirm that security measures and access controls remain effective
+- Test that existing data validation rules continue to work
+- Validate that existing business logic remains unchanged unless explicitly modified
+- Ensure that existing documentation remains accurate after changes 

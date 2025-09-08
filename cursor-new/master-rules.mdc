@@ -1,0 +1,159 @@
+---
+description: Master Rules for Agile Software Development Lifecycle
+globs: ["**/*"]
+alwaysApply: true
+---
+
+# Master Rules for Agile Software Development Lifecycle
+
+## Overview
+This master rule guides the complete agile software development lifecycle with 7 distinct phases. All development follows MVP principles, emphasizing feasibility, desirability, and viability testing.
+
+## Lifecycle Phases
+
+### 1. Conceptualization Phase
+**Purpose**: Accept requirements from Product Owner and convert to story cards
+**Key Activities**: Requirements gathering, story card creation, problem definition
+**Rules Reference**: `@conceptualization/requirements-gathering.mdc`
+
+### 2. Designing Phase  
+**Purpose**: Create system architecture, user experience design, and technical specifications
+**Key Activities**: System design, UX/UI design, technical architecture
+**Rules Reference**: `@designing/system-architecture.mdc`, `@designing/ux-design.mdc`, `@designing/technical-specifications.mdc`
+
+### 3. Planning Phase
+**Purpose**: Break down work into manageable story cards, estimate effort, and prioritize
+**Key Activities**: Story card creation, estimation, sprint planning, backlog management
+**Rules Reference**: `@planning/story-card-creation.mdc`, `@planning/estimation.mdc`, `@planning/backlog-management.mdc`
+
+### 4. Development Phase
+**Purpose**: Implement features following engineering principles and MVP approach
+**Key Activities**: Coding, unit testing, code review, continuous integration
+**Rules Reference**: `@development/engineering-principles.mdc`, `@development/logging.mdc`, `@root-cause-analysis.mdc`, `@development/spike.mdc`
+
+### 5. Integration and Testing Phase
+**Purpose**: Comprehensive testing, integration validation, and quality assurance
+**Key Activities**: Integration testing, system testing, performance testing, evidence-based validation
+**Rules Reference**: `@integration-testing/test-strategy.mdc`, `@integration-testing/evidence-based-testing.mdc`, `@integration-testing/quality-assurance.mdc`
+
+### 6. Release and Deployment Phase
+**Purpose**: Deploy to production, monitor performance, and manage releases
+**Key Activities**: Deployment, monitoring, release management, rollback planning, documentation
+**Rules Reference**: `@release-deployment/deployment-strategy.mdc`, `@release-deployment/documentation.mdc`
+
+### 7. Review Phase
+**Purpose**: Evaluate outcomes, gather feedback, and plan improvements
+**Key Activities**: Retrospectives, performance analysis, lessons learned, enhancement planning
+**Rules Reference**: `@review/retrospectives.mdc`, `@review/performance-analysis.mdc`, `@review/enhancement-planning.mdc`
+
+## Core Principles
+
+### Date and Time Management
+- **Reference**: See `@date-commands.mdc` for standardized date/time commands
+- **Format**: All date fields use `yyyy-MM-dd HH:mm:ss` format
+- **Usage**: Run appropriate command for your OS when creating documents with date fields
+
+### Product Owner Demonstration
+- **Reference**: See `@po-demo.mdc` for demo code creation requirements
+- **Demo Code**: Create executable demo code in `demo/` folder with story card references
+- **Demo Process**: Working demo code with clear story card references for PO review
+
+### MVP Principles
+- Focus on core functionality first
+- Avoid over-engineering
+- Test feasibility, desirability, and viability
+- Iterative development and validation
+
+### Software Engineering Principles
+- **DRY**: Don't Repeat Yourself
+- **SOLID**: Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion
+- **KISS**: Keep It Simple, Stupid
+- **YAGNI**: You Aren't Gonna Need It
+- **Abstraction**: Hide complex implementation details
+- **Modularity**: Independent, self-contained components
+- **High Cohesion**: Elements work together for single purpose
+- **Low Coupling**: Minimal dependencies between modules
+
+### Testing Principles
+- Evidence-based testing (no mocks unless justified)
+- Test as close to production as possible
+- Comprehensive test coverage (unit → integration → system)
+- Real environment validation
+- Screenshot evidence for UI testing
+- Database validation for data operations
+
+### Quality Assurance
+- Definition of Done: All acceptance criteria met, tests pass, code review completed
+- Product Owner approval required at key stages
+- Comprehensive root cause analysis before troubleshooting
+- SPIKE process for uncertainty/ambiguity
+- Continuous improvement through self-reflection
+
+## Process Flow
+
+### Conversation Initiation
+1. Review past conversation history
+2. Review relevant rules for current context
+3. Refer to appropriate phase-specific rules before starting tasks
+
+### Story Card Development
+1. Use `@planning/story-card-creation.mdc` for story structure
+2. Include start/end datetime (Singapore time) and duration
+3. Map test cases to acceptance criteria
+4. Require Product Owner approval before development
+
+### Development Process
+1. Refer to `@development/coding-standards.mdc` before coding
+2. Follow TDD approach (tests first, then implementation)
+3. Present implementation options with pros/cons
+4. Get Product Owner confirmation before proceeding
+
+### Testing Process
+1. Use `@integration-testing/evidence-based-testing.mdc` for test strategy
+2. Provide evidence that software works (unit tests, integration tests, screenshots)
+3. Validate external services with actual connectivity tests
+4. No mock data unless absolutely necessary
+
+### Troubleshooting Process
+1. Use `@root-cause-analysis.mdc` for comprehensive analysis
+2. Use `@development/spike.mdc` for uncertainty and ambiguity
+3. Present evidence-based analysis before proposing solutions
+4. Get Product Owner approval before implementing fixes
+5. Document lessons learned
+
+## Key Rules References
+
+### Essential Rules for All Phases
+- `@planning/story-card-creation.mdc` - Story card structure and acceptance criteria
+- `@development/engineering-principles.mdc` - Software engineering best practices
+- `@integration-testing/evidence-based-testing.mdc` - Testing strategy and evidence requirements
+- `@root-cause-analysis.mdc` - Troubleshooting and debugging approach
+- `@development/spike.mdc` - SPIKE process for uncertainty and ambiguity
+
+### Phase-Specific Rules
+- **Conceptualization**: `@conceptualization/` - Requirements and user research
+- **Designing**: `@designing/` - Architecture and technical specifications  
+- **Planning**: `@planning/` - Story cards, estimation, and sprint planning
+- **Development**: `@development/` - Coding standards and implementation
+- **Integration/Testing**: `@integration-testing/` - Testing strategy and quality assurance
+- **Release/Deployment**: `@release-deployment/` - Deployment and monitoring
+- **Review**: `@review/` - Retrospectives and improvement planning
+
+## Product Owner Engagement
+- Always seek clarification when in doubt
+- Present options with pros/cons analysis
+- Require explicit approval before proceeding
+- No assumptions without confirmation
+- Regular status updates and demonstrations
+
+## Self-Reflection Requirements
+- Review actions on every story card
+- Identify what was done well, what can be improved, what was not done well
+- Document lessons learned for continuous improvement
+- Address any issues that may have upset the Product Owner
+
+## Environment Setup
+- Use conda environment `[ENVIRONMENT_TO_BE_REPLACE]` for Python development
+- Verify environment before starting development
+- Read requirements.txt and package.json for dependencies
+- Never modify working code without explicit approval

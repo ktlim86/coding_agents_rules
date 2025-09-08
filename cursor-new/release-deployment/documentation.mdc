@@ -1,0 +1,267 @@
+---
+description: Post-Deployment Documentation Requirements
+globs: ["docs/**/*", "README.md", "deploy/**/*"]
+alwaysApply: false
+---
+
+# Post-Deployment Documentation Requirements
+
+## Purpose
+Create comprehensive documentation after code deployment to UAT and Production environments to ensure users can understand, use, and maintain the system.
+
+## Documentation Requirements
+
+### After UAT Deployment
+- **UAT Documentation**: Document UAT environment setup and testing procedures
+- **User Acceptance Testing**: Create UAT testing guides and checklists
+- **Issue Tracking**: Document any issues found during UAT testing
+- **Performance Metrics**: Record UAT performance benchmarks
+
+### After Production Deployment
+- **Production Documentation**: Complete production environment documentation
+- **User Guides**: Create end-user documentation and guides
+- **Administrative Guides**: Document system administration procedures
+- **Monitoring Setup**: Document monitoring and alerting configuration
+
+## Required Documentation Structure
+
+### 1. Getting Started Guide (`docs/getting-started.md`)
+```markdown
+# Getting Started Guide
+
+## Prerequisites
+- [List system requirements]
+- [Required software versions]
+- [External dependencies]
+
+## Installation
+1. [Step-by-step installation]
+2. [Configuration setup]
+3. [Database initialization]
+4. [Service startup]
+
+## Quick Start
+1. [Basic usage example]
+2. [First-time setup]
+3. [Verification steps]
+
+## Troubleshooting
+- [Common issues and solutions]
+- [Error messages and fixes]
+- [Performance optimization]
+```
+
+### 2. Deployment Guide (`docs/deployment.md`)
+```markdown
+# Deployment Guide
+
+## Environment Setup
+- **Development**: [Dev environment setup]
+- **UAT**: [UAT environment setup]
+- **Production**: [Production environment setup]
+
+## Deployment Process
+1. **Pre-deployment**: [Pre-deployment checklist]
+2. **Deployment**: [Deployment steps]
+3. **Post-deployment**: [Post-deployment verification]
+4. **Rollback**: [Rollback procedures]
+
+## Configuration
+- [Environment variables]
+- [Configuration files]
+- [Service dependencies]
+
+## Monitoring
+- [Health checks]
+- [Log monitoring]
+- [Performance metrics]
+```
+
+### 3. API Documentation (`docs/api/`)
+```markdown
+# API Documentation
+
+## Authentication
+- [Authentication methods]
+- [API keys setup]
+- [Token management]
+
+## Endpoints
+### GET /api/endpoint
+- **Description**: [Endpoint description]
+- **Parameters**: [Request parameters]
+- **Response**: [Response format]
+- **Example**: [Usage example]
+
+## Error Handling
+- [Error codes]
+- [Error responses]
+- [Troubleshooting]
+```
+
+### 4. User Guide (`docs/user-guide.md`)
+```markdown
+# User Guide
+
+## Overview
+- [System overview]
+- [Key features]
+- [User roles]
+
+## Getting Started
+1. [User registration]
+2. [First login]
+3. [Basic navigation]
+
+## Features
+- [Feature 1]: [How to use]
+- [Feature 2]: [How to use]
+- [Feature 3]: [How to use]
+
+## Troubleshooting
+- [Common user issues]
+- [Contact support]
+```
+
+## Documentation Templates
+
+### Environment Setup Template
+```markdown
+## [Environment] Setup
+
+### Prerequisites
+- [System requirements]
+- [Software dependencies]
+- [Network requirements]
+
+### Installation Steps
+1. **Clone Repository**
+   ```bash
+   git clone [repository-url]
+   cd [project-directory]
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Configuration**
+   ```bash
+   cp .env.example .env
+   # Edit .env with environment-specific values
+   ```
+
+4. **Database Setup**
+   ```bash
+   python manage.py migrate
+   python manage.py loaddata initial_data.json
+   ```
+
+5. **Start Services**
+   ```bash
+   python manage.py runserver
+   ```
+
+### Verification
+- [ ] Service is running
+- [ ] Database is accessible
+- [ ] API endpoints are responding
+- [ ] Health checks are passing
+```
+
+### Deployment Checklist Template
+```markdown
+## Deployment Checklist
+
+### Pre-Deployment
+- [ ] Code review completed
+- [ ] Tests passing
+- [ ] Documentation updated
+- [ ] Environment variables configured
+- [ ] Database migrations ready
+
+### Deployment
+- [ ] Backup current version
+- [ ] Deploy new code
+- [ ] Run database migrations
+- [ ] Update configuration
+- [ ] Restart services
+
+### Post-Deployment
+- [ ] Health checks passing
+- [ ] Smoke tests completed
+- [ ] Performance metrics normal
+- [ ] Error logs clean
+- [ ] User acceptance testing
+
+### Rollback Plan
+- [ ] Rollback procedure documented
+- [ ] Rollback triggers defined
+- [ ] Rollback tested
+```
+
+## Documentation Quality Standards
+
+### Content Requirements
+- **Conciseness**: Keep information focused and essential
+- **Accuracy**: Ensure all information matches current implementation
+- **Clarity**: Use simple language and clear examples
+- **Completeness**: Cover all necessary steps without assumptions
+- **Current**: Update documentation with each deployment
+
+### Format Requirements
+- **Consistent Structure**: Use standardized templates
+- **Code Examples**: Include working code examples
+- **Step-by-Step**: Provide clear step-by-step instructions
+- **Screenshots**: Include visual aids when helpful
+- **Links**: Add links to related documentation
+
+## Documentation Update Process
+
+### After UAT Deployment
+1. **Update UAT Documentation**: Document UAT environment and procedures
+2. **Create Testing Guides**: Write UAT testing procedures
+3. **Document Issues**: Record any issues found during UAT
+4. **Update Deployment Guide**: Refine deployment procedures
+
+### After Production Deployment
+1. **Complete Production Docs**: Finalize production documentation
+2. **Create User Guides**: Write end-user documentation
+3. **Update API Docs**: Complete API documentation
+4. **Create Admin Guides**: Document administrative procedures
+
+## Integration with Other Rules
+
+### Story Card Integration
+- **Reference**: Link documentation to completed story cards
+- **Acceptance Criteria**: Document how acceptance criteria are met
+- **Demo Integration**: Include demo code references in documentation
+
+### Demo Code Integration
+- **Demo References**: Link to demo code in `demo/` folder
+- **Demo Instructions**: Include demo running instructions
+- **Demo Validation**: Document how demos validate functionality
+
+## Documentation Review Checklist
+
+### Content Review
+- [ ] All features are documented
+- [ ] Setup instructions are complete
+- [ ] Deployment procedures are accurate
+- [ ] User guides are clear
+- [ ] API documentation is complete
+
+### Quality Review
+- [ ] Code examples are working
+- [ ] Screenshots are current
+- [ ] Links are valid
+- [ ] Language is clear
+- [ ] Structure is consistent
+
+### Deployment Review
+- [ ] UAT documentation is complete
+- [ ] Production documentation is ready
+- [ ] User guides are available
+- [ ] Admin guides are complete
+- [ ] Monitoring setup is documented

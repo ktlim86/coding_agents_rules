@@ -1,0 +1,199 @@
+---
+description: Deployment Strategy and Release Management
+globs: ["deploy/**/*", "scripts/**/*", "docker/**/*"]
+alwaysApply: false
+---
+
+# Deployment Strategy and Release Management
+
+## Purpose
+Implement safe, reliable deployment strategies that minimize risk, ensure system stability, and provide quick rollback capabilities for MVP releases.
+
+## Deployment Principles
+
+### MVP Deployment Focus
+- **Simplicity First**: Start with simple deployment strategies
+- **Risk Minimization**: Minimize deployment risks and impact
+- **Quick Rollback**: Enable fast rollback when issues occur
+- **Incremental Complexity**: Add complexity only when justified
+- **Monitoring**: Comprehensive monitoring and alerting
+
+## Deployment Strategies
+
+### Blue-Green Deployment
+- **Definition**: Maintain two identical production environments
+- **Process**: Deploy to inactive environment, then switch traffic
+- **Benefits**: Zero downtime, quick rollback, easy testing
+- **Use Case**: Critical applications requiring zero downtime
+
+### Canary Deployment
+- **Definition**: Gradual rollout to subset of users
+- **Process**: Deploy to small percentage, monitor, then expand
+- **Benefits**: Risk mitigation, real-world testing, gradual rollout
+- **Use Case**: New features or significant changes
+
+### Rolling Deployment
+- **Definition**: Deploy to subset of instances at a time
+- **Process**: Update instances one by one while maintaining service
+- **Benefits**: Continuous service availability, resource efficiency
+- **Use Case**: Stateless applications with multiple instances
+
+### Feature Flags
+- **Definition**: Runtime feature toggling without deployment
+- **Process**: Deploy code with features disabled, enable via flags
+- **Benefits**: Instant rollback, A/B testing, gradual feature rollout
+- **Use Case**: New features, experimental functionality
+
+## Deployment Pipeline
+
+### CI/CD Pipeline Stages
+```
+1. Source Control → 2. Build → 3. Test → 4. Package → 5. Deploy → 6. Monitor
+```
+
+### Pipeline Components
+- **Source Control**: Git-based version control
+- **Build**: Automated build process
+- **Test**: Automated testing (unit, integration, system)
+- **Package**: Application packaging and containerization
+- **Deploy**: Automated deployment to target environment
+- **Monitor**: Post-deployment monitoring and validation
+
+## Deployment Environments
+
+### Environment Strategy
+- **Development**: Local development environment
+- **Staging**: Pre-production testing environment
+- **Production**: Live production environment
+- **Feature**: Feature-specific testing environment
+
+### Environment Configuration
+- **Configuration Management**: Environment-specific configurations
+- **Secrets Management**: Secure handling of sensitive data
+- **Database Migrations**: Automated database schema updates
+- **Service Dependencies**: Proper service dependency management
+
+## Deployment Automation
+
+### Infrastructure as Code (IaC)
+```yaml
+# Example Docker Compose for MVP
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - db
+  
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=myapp
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+```
+
+### Deployment Scripts
+```bash
+#!/bin/bash
+# deploy.sh - Simple deployment script for MVP
+
+set -e
+
+echo "Starting deployment..."
+
+# Build application
+docker build -t myapp:latest .
+
+# Stop existing containers
+docker-compose down
+
+# Start new containers
+docker-compose up -d
+
+# Wait for health check
+sleep 30
+
+# Verify deployment
+curl -f http://localhost:3000/health || exit 1
+
+echo "Deployment completed successfully!"
+```
+
+## Monitoring and Validation
+
+### Health Checks
+- **Application Health**: Endpoint health checks
+- **Database Health**: Database connectivity checks
+- **Service Health**: External service dependency checks
+- **Performance Metrics**: Response time and throughput monitoring
+
+### Deployment Validation
+- **Smoke Tests**: Basic functionality verification
+- **Integration Tests**: End-to-end workflow testing
+- **Performance Tests**: Load and performance validation
+- **User Acceptance**: User workflow validation
+
+## Rollback Strategy
+
+### Rollback Triggers
+- **Health Check Failures**: Application health check failures
+- **Performance Degradation**: Significant performance issues
+- **Error Rate Increase**: High error rates
+- **User Complaints**: User-reported issues
+
+### Rollback Process
+1. **Identify Issue**: Detect deployment problem
+2. **Assess Impact**: Evaluate impact and urgency
+3. **Execute Rollback**: Revert to previous version
+4. **Validate Rollback**: Verify system stability
+5. **Document Issue**: Document problem and resolution
+
+## Best Practices
+
+### Deployment Best Practices
+- **Automated Testing**: Comprehensive automated testing
+- **Incremental Deployment**: Deploy small, incremental changes
+- **Monitoring**: Continuous monitoring and alerting
+- **Documentation**: Clear deployment documentation
+- **Team Communication**: Clear communication about deployments
+
+### Risk Mitigation
+- **Backup Strategy**: Regular backups and recovery procedures
+- **Rollback Plan**: Clear rollback procedures
+- **Monitoring**: Real-time monitoring and alerting
+- **Testing**: Thorough testing before deployment
+- **Documentation**: Clear documentation of changes
+
+## MVP Deployment Checklist
+
+### Pre-Deployment
+- [ ] All tests pass
+- [ ] Code review completed
+- [ ] Documentation updated
+- [ ] Database migrations ready
+- [ ] Configuration updated
+- [ ] Monitoring configured
+
+### Deployment
+- [ ] Deploy to staging environment
+- [ ] Run smoke tests
+- [ ] Deploy to production
+- [ ] Verify health checks
+- [ ] Monitor for issues
+
+### Post-Deployment
+- [ ] Monitor application metrics
+- [ ] Check error logs
+- [ ] Validate user workflows
+- [ ] Document deployment
+- [ ] Update team on status

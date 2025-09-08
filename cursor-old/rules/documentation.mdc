@@ -1,0 +1,109 @@
+---
+description: Documentation Guidelines
+globs: ["docs/*.md","docs/**/*.md"]
+alwaysApply: false
+---
+# Documentation Guidelines for comprehensive project documentation maintenance
+
+- After each task completion, documentation must be updated to ensure users can understand and work with the system
+- All documentation must be placed in the `docs/` folder with clear, organized structure
+- Documentation must be concise, accurate, and easy to understand for new team members
+- Use clear headings, code examples, and step-by-step instructions
+- Include troubleshooting sections for common issues
+- Keep documentation current with each code change
+
+## Required Documentation Sections After Task Completion:
+
+### 1. Getting Started Guide (`docs/getting-started.md`)
+- **Environmental Setup:**
+  - Prerequisites and system requirements
+  - Installation steps for all dependencies
+  - Environment configuration (variables, config files)
+  - Database setup and initialization
+  - Any required external service accounts or API keys
+
+- **How to Run Tests:**
+  - Test execution commands and options
+  - Test coverage requirements
+  - Running specific test suites
+  - Test data setup and cleanup
+  - Continuous integration test procedures
+
+- **How to Deploy:**
+  - Build and packaging instructions
+  - Deployment environments (dev, staging, production)
+  - Deployment scripts and automation
+  - Environment-specific configurations
+  - Rollback procedures and monitoring
+
+- **How to Navigate the Code:**
+  - Project structure overview
+  - Key directories and their purposes
+  - Main entry points and application flow
+  - Architecture patterns used
+  - Code organization principles
+
+### 2. API Documentation (`docs/api/`)
+- Endpoint specifications with examples
+- Request/response formats
+- Authentication and authorization
+- Error codes and handling
+- Rate limiting and usage guidelines
+
+### 3. Database Documentation (`docs/database/`)
+- Schema documentation and diagrams
+- Migration procedures
+- Data models and relationships
+- Backup and recovery procedures
+- Performance optimization guidelines
+
+### 4. Development Workflow (`docs/development/`)
+- Branching strategy and git workflow
+- Code review process
+- Testing procedures
+- Deployment pipeline
+- Release management
+
+## Documentation Quality Standards:
+
+- **Conciseness:** Keep information focused and avoid unnecessary details
+- **Accuracy:** Ensure all information is current and matches actual implementation
+- **Clarity:** Use simple language and clear examples
+- **Completeness:** Cover all necessary steps without assuming prior knowledge
+- **Maintainability:** Structure documentation for easy updates
+
+## Documentation Update Process:
+
+1. **After Task Completion:** Update relevant documentation sections
+2. **Code Changes:** Ensure documentation reflects current implementation
+3. **User Feedback:** Incorporate feedback to improve clarity
+4. **Regular Review:** Schedule periodic documentation reviews
+5. **Version Control:** Track documentation changes with code changes
+
+## Documentation Templates:
+
+- Use consistent formatting and structure
+- Include table of contents for longer documents
+- Provide code examples with proper syntax highlighting
+- Include screenshots or diagrams when helpful
+- Add links to related documentation sections
+
+## Integration with Other Rules:
+
+- Follow `@story-card-structure.mdc` for task documentation
+- Use `@development-workflow.mdc` for development process documentation
+- Apply `@testing.mdc` guidelines for test documentation
+- Reference `@dependencies-release-tracking.mdc` for dependency documentation
+- Follow `@mvp-principles.mdc` for keeping documentation focused and essential
+
+## Documentation Review Checklist:
+
+- [ ] All new features are documented
+- [ ] Setup instructions are current and complete
+- [ ] Test procedures are clear and executable
+- [ ] Deployment steps are accurate
+- [ ] Code navigation is intuitive
+- [ ] Examples are working and current
+- [ ] Links and references are valid
+- [ ] Documentation is reviewed by team members
+- [ ] User feedback is incorporated

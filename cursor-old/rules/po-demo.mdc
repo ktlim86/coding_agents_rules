@@ -1,0 +1,89 @@
+---
+description: Product Owner Demonstration Requirements
+alwaysApply: false
+---
+# Product Owner Demonstration Requirements
+
+- Before marking any task complete, demonstrate working code to Product Owner
+- Show actual functionality - not just test results
+- Demonstrate user experience - how the feature works from user perspective
+- Provide evidence that implementation meets documented requirements
+- Working Demo: Provide executable demonstration of implemented features
+- Visual Evidence: Show screenshots, outputs, or live demonstrations
+- User Story Validation: Confirm implementation satisfies user story requirements
+- Acceptance Criteria Check: Verify all acceptance criteria are met
+- Product Owner must review working implementation before task completion
+- No self-approval - implementation must be demonstrated and accepted
+- Address feedback before marking task as complete
+- Document any deviations from original requirements and get approval
+- Demonstrate core functionality working as expected
+- Show integration with existing system components
+- Provide performance metrics and benchmarks if applicable
+- Demonstrate error handling and edge case scenarios
+- Show configuration and customization options if implemented
+- Provide user workflow demonstration from start to finish
+- Show data validation and business rule enforcement
+- Demonstrate security measures and access controls if applicable
+- Provide API endpoint testing and validation if applicable
+- Show database operations and data persistence if applicable
+- Demonstrate logging and monitoring capabilities if implemented
+- Provide deployment and configuration instructions if applicable
+- Show backward compatibility with existing features
+- Demonstrate scalability and performance under load if applicable
+- Provide troubleshooting and debugging guidance if applicable
+- Show documentation and help resources if implemented
+- Demonstrate cross-platform compatibility if applicable
+- Provide migration and upgrade procedures if applicable
+- Show integration with external services if applicable
+- Demonstrate data backup and recovery if applicable
+- Provide testing and validation procedures
+- Show compliance with regulatory requirements if applicable
+- Demonstrate accessibility features if implemented
+- Provide localization and internationalization if applicable
+- Show mobile responsiveness if applicable
+- Demonstrate offline functionality if applicable
+- Provide real-time updates and notifications if applicable
+- Show data export and import capabilities if applicable
+- Demonstrate search and filtering functionality if applicable
+- Provide reporting and analytics if implemented
+- Show audit trail and history tracking if applicable
+- Demonstrate role-based access control if implemented
+- Provide backup and restore procedures if applicable
+- Show system health monitoring if implemented
+- Demonstrate automated testing and CI/CD integration if applicable
+- Provide disaster recovery procedures if applicable
+- Show load balancing and failover if implemented
+- Demonstrate caching and optimization if applicable
+- Provide performance tuning guidelines if applicable
+- Show security scanning and vulnerability assessment if applicable
+- Demonstrate compliance reporting if implemented
+- Provide user training materials if applicable
+- Show system administration tools if implemented
+- Demonstrate data governance and privacy controls if applicable
+- Provide business continuity planning if applicable
+- Show system integration testing if implemented
+- Demonstrate end-to-end workflow validation
+- Provide user acceptance testing procedures
+- Show production readiness assessment
+- Demonstrate go-live checklist completion
+- Provide post-deployment monitoring plan
+- Show maintenance and support procedures
+- Demonstrate upgrade and patch management
+- Provide rollback procedures if applicable
+- Show system performance baselines
+- Demonstrate capacity planning if applicable
+- Provide cost analysis and ROI if applicable
+- Show risk assessment and mitigation
+- Demonstrate compliance with project standards
+- Provide lessons learned documentation
+- Show future enhancement roadmap if applicable
+- Demonstrate stakeholder satisfaction validation
+- Provide project closure documentation
+- Show knowledge transfer procedures
+- Demonstrate team training completion
+- Provide handover documentation if applicable
+- Show project success metrics
+- Demonstrate business value delivery
+- Provide continuous improvement recommendations
+- Show next phase planning if applicable
+

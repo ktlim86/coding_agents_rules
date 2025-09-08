@@ -1,0 +1,44 @@
+---
+description: Enhancement Planning Guidelines
+globs: ["trigger/*","web/*","api_platform/*"]
+alwaysApply: false
+---
+# Enhancement Planning Guidelines for system improvement and feature enhancement with comprehensive dependency analysis
+
+- For existing system enhancements and feature improvements, conduct comprehensive analysis of all dependencies and code before proposing changes
+- Before proposing any enhancement, demonstrate understanding of existing system through code references
+- Present enhancement options with impact analysis and evidence from codebase
+- Get user confirmation on enhancement approach before detailed planning
+- Research and provide web references for all enhancement approaches, technologies, or best practices being considered
+- Include official documentation, case studies, or authoritative sources for enhancement methodologies
+- Map out all existing dependencies, imports, and external services that will be affected by the enhancement
+- Analyze the current codebase architecture and identify how the enhancement will integrate with existing components
+- Review existing data models, database schemas, and API contracts that may need modification
+- Examine current business logic and workflows to understand the impact of proposed changes
+- Identify all integration points that will be affected by the enhancement (APIs, databases, external services)
+- Analyze performance implications of the enhancement on existing system components
+- Review security implications and ensure the enhancement maintains or improves security posture
+- Examine scalability considerations and how the enhancement affects system capacity
+- Identify backward compatibility requirements and migration strategies if needed
+- Review existing test coverage and plan additional tests for the enhancement
+- Analyze deployment and rollback strategies for the enhancement
+- Consider the impact on existing users and plan for user experience continuity
+- Review monitoring and logging requirements for the enhanced functionality
+- Examine configuration management and environment-specific considerations
+- Identify potential risks and mitigation strategies for the enhancement
+- Plan for gradual rollout and feature flags if the enhancement is significant
+- Consider the impact on existing documentation and plan updates
+- Review resource requirements (development time, infrastructure, maintenance)
+- Analyze the enhancement's alignment with MVP principles and avoid over-engineering
+- Plan for proper testing following `@testing.mdc` guidelines for the enhancement
+- Ensure the enhancement follows `@mvp-principles.mdc` for core functionality focus
+- Document the enhancement plan following `@story-card-structure.mdc` format
+- Estimate effort using `@t-shirt-sizing.mdc` framework for the enhancement
+- Follow `@development-workflow.mdc` for implementation of the enhancement
+- Update `@dependencies-release-tracking.mdc` with new dependencies introduced by the enhancement
+- For Enhancement Planning and System Improvement, refer to `@enhancement-planning.mdc` for comprehensive analysis framework
+- Document the enhancement plan following `@story-card-structure.mdc` format
+- Estimate effort using `@t-shirt-sizing.mdc` framework for the enhancement
+- Follow `@development-workflow.mdc` for implementation of the enhancement
+- Update `@dependencies-release-tracking.mdc` with new dependencies introduced by the enhancement
+- For Enhancement Planning and System Improvement, refer to `@enhancement-planning.mdc` for comprehensive analysis framework

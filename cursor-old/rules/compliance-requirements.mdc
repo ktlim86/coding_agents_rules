@@ -1,0 +1,25 @@
+---
+description: Compliance requirements
+globs: 
+alwaysApply: false
+---
+- All features must follow story card structure with proper templates and status workflow
+- All code must have corresponding test cases with proper coverage
+- All stories must be sized using t-shirt sizing (S/M/L) framework
+- All POCs must be placed in demo folder with proper documentation
+- Maintain status updates throughout development process
+- Complete dependency analysis before starting development
+- Follow MVP principles for all feature implementations
+- Link dependencies to story cards for traceability
+- Reference story cards in release notes
+- Document backlog items in backlog folder
+- All code must pass linting checks and meet quality standards
+- Maintain minimum test coverage thresholds
+- Address security vulnerabilities promptly
+- Meet performance benchmarks
+- Keep documentation current and comprehensive
+- Conduct code reviews focusing on quality, coverage, security, and performance
+- Include dependency impact assessment and MVP compliance in reviews
+- Complete all required checklists before marking stories as Done
+- Follow mandatory requirements with exceptions only for emergency fixes
+- Conduct regular quality assessments and process improvements

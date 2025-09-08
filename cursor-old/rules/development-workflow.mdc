@@ -1,0 +1,99 @@
+---
+description: Development workflow
+globs:
+alwaysApply: false
+---
+# Development Workflow
+
+- Before starting development: ensure story card is in "PO Approval" status
+- Review acceptance criteria and test cases before coding
+- Conduct thorough codebase analysis and dependency mapping before any changes
+- Present implementation options to user with pros/cons analysis
+- Get user confirmation on chosen approach before proceeding
+- Document all implementation decisions and rationale
+- Research and provide web references for all external libraries, frameworks, or best practices being considered
+- Include official documentation, GitHub links, or authoritative sources for technical recommendations
+- Set up local development environment and create feature branch from main
+- Write test cases first (TDD approach), then implement code to pass tests
+- Update story card status to "Work In Progress" during development
+- Document any deviations or discoveries during development
+- Ensure all acceptance criteria are met before completion
+- Run all test cases and verify they pass before completion
+- Update project documentation following `@documentation.mdc` guidelines
+- Ensure getting-started guide reflects any new setup requirements
+- Update API documentation if new endpoints or changes are added
+- Update deployment documentation if build/deploy process changes
+- Update story card status to "PO Accepted" when ready for review
+- Request code review and update documentation
+- Get PO approval, merge to main branch, update status to "Done"
+- Deploy to production if applicable
+- All libraries imported should be put at the top of the files. 
+- Code review should focus on quality, test coverage, security, performance, and documentation
+- Include dependency impact assessment and MVP compliance in reviews
+- Code review must verify implementation matches approved approach
+- Code review must include verification of existing code understanding
+- Code review must verify web references and documentation sources are current and authoritative
+- Code review must verify documentation updates are complete and accurate
+- Story is ready when card is complete, criteria defined, tests identified, dependencies understood
+- Place unit tests in `tests/unit/`, integration tests in `tests/integration/`, e2e tests in `tests/e2e/`
+- Name test files to match the story they test
+- Update README.md with new features and document API changes
+- Update setup instructions when needed
+- Story is ready when card is complete, criteria defined, tests identified, dependencies understood
+- Place unit tests in `tests/unit/`, integration tests in `tests/integration/`, e2e tests in `tests/e2e/`
+- Name test files to match the story they test
+- Update README.md with new features and document API changes
+- Update setup instructions when needed
+- NEVER modify working code unless explicitly requested or documented in task requirements
+- Existing tests must continue to pass after any modifications
+- If tests fail after changes, revert immediately and analyze root cause
+- Test existing functionality first before making any modifications
+- Only enhance code when task requirements explicitly specify enhancement
+- Preserve existing functionality - enhancements should be additive, not destructive
+- Maintain backward compatibility unless breaking changes are explicitly required
+- Document all changes and their impact on existing functionality
+- Run existing test suite before making any code changes
+- Verify current functionality works as expected before modifications
+- Create baseline of current behavior before any code changes
+- Ensure tests pass after any changes
+- Identify critical paths and existing functionality that must not be broken
+- Create test plan for validating changes before implementation
+- Run existing test suite after each change to ensure no regression
+- Incremental testing after each modification to catch issues early
+- Regression testing to ensure existing functionality continues to work
+- Integration testing to verify components work together after changes
+- Performance testing if performance characteristics are affected by changes
+- Immediate rollback if tests fail after any code modifications
+- Root cause analysis before attempting changes again
+- Document lessons learned to prevent future breaking changes
+- Test existing functionality first before making any enhancements
+- Verify current behavior works as expected before modifications
+- Create baseline of current behavior before any code changes
+- Ensure all existing tests pass after any modifications
+- Validate that changes preserve backward compatibility
+- Test integration points that may be affected by changes
+- Verify that existing user workflows continue to function
+- Confirm that database schemas and data structures remain intact
+- Test that existing API endpoints continue to work as expected
+- Validate that configuration files and environment variables are not affected
+- Ensure that existing logging and monitoring continue to function
+- Test that error handling and edge cases remain robust
+- Verify that performance benchmarks are maintained or improved
+- Confirm that security measures and access controls remain effective
+- Test that existing data validation rules continue to work
+- Validate that existing business logic remains unchanged unless explicitly modified
+- Ensure that existing documentation remains accurate after changes
+- Code review must verify that existing functionality is preserved
+- Code review must include regression testing validation
+- Code review must verify that no breaking changes were introduced
+- Code review must confirm that all existing tests continue to pass
+- Code review must validate that integration points remain functional
+- Code review must verify that user workflows are not disrupted
+- Code review must confirm that performance characteristics are maintained
+- Code review must validate that security measures remain intact
+- Code review must verify that documentation reflects actual behavior
+- Story completion requires validation that existing functionality is preserved
+- Task completion requires demonstration that no regression occurred
+- Implementation approval requires evidence of non-breaking changes
+- Deployment approval requires confirmation of backward compatibility
+- Production release requires validation of existing system integrity

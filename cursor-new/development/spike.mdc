@@ -1,0 +1,173 @@
+---
+description: SPIKE Process for Uncertainty and Ambiguity Resolution
+globs: ["docs/spikes/*.md", "spike/*spike*.py", "spike/*spike*.js", "spike/*spike*.ts", "spike/*spike*.java", "spike/*spike*.go", "spike/*spike*.rs"]
+alwaysApply: false
+---
+
+# SPIKE Process for Uncertainty and Ambiguity Resolution
+
+## Purpose
+Time-boxed proof of concept to investigate uncertainty, ambiguity, or technical feasibility before development or troubleshooting.
+
+## When to Use SPIKE
+
+### Development SPIKE
+- Technical uncertainty about implementation approach
+- Unknown external service behavior or integration
+- Unproven technology or framework evaluation
+- Complex architectural decisions
+- Performance or scalability concerns
+
+### Troubleshooting SPIKE
+- Root cause investigation for complex issues
+- Performance bottleneck analysis
+- System behavior understanding
+- Bug analysis and reproduction
+
+## SPIKE Planning Template
+
+```markdown
+# SPIKE-[ID]: [Title]
+
+## Basic Information
+- SPIKE ID: [spike_01, spike_02, etc.]
+- Title: [Clear, descriptive title]
+- Context: [Development/Troubleshooting and Debugging]
+- Related Story Card: [Story card ID if applicable]
+- Duration: [Time-boxed duration - 1-3 days]
+- Investigator: [Assigned team member]
+- Created Date: [YYYY-MM-DD]
+
+## Objective
+- What needs to be investigated
+- Specific questions to answer
+- Success criteria
+
+## Approach
+- Investigation methods
+- Tools and techniques
+- Data sources
+
+## Deliverables
+- Expected outputs
+- Documentation requirements
+- Code samples or prototypes
+
+## File Location
+- [docs/spikes/spike_[ID]_[title].md]
+```
+
+## Date Commands
+- **Reference**: See `@date-commands.mdc` for date/time commands
+- **Format**: Use `yyyy-MM-dd HH:mm:ss` format for all date fields
+
+## SPIKE Execution Process
+
+### Development SPIKE
+1. **Setup**: Set up investigation environment
+2. **Investigation**: Explore technical approaches
+3. **Prototyping**: Create proof of concept
+4. **Documentation**: Document findings and recommendations
+5. **Options Analysis**: Present options with pros/cons
+6. **Recommendation**: Recommend best approach
+
+### Troubleshooting SPIKE
+1. **Problem Analysis**: Analyze the problem systematically
+2. **Data Collection**: Gather relevant data and evidence
+3. **Hypothesis Testing**: Test hypotheses about root cause
+4. **Root Cause Identification**: Identify the actual root cause
+5. **Solution Options**: Present solution options with pros/cons
+6. **Recommendation**: Recommend best solution approach
+
+## File Organization
+
+### Directory Structure
+```
+docs/spikes/
+├── spike_01_external_api_integration.md
+├── spike_02_database_performance.md
+└── ...
+
+spike/
+├── spike_01_api_prototype.py
+├── spike_02_performance_test.js
+└── ...
+```
+
+### Naming Convention
+- **Documentation**: `spike_[ID]_[title].md`
+- **Code**: `spike_[ID]_[description].[ext]`
+
+## Integration with Other Processes
+
+### Development SPIKE Integration
+- **Story Card Reference**: Link to related story card
+- **Requirements Gathering**: Use findings for requirements
+- **Story Card Creation**: Create story cards based on findings
+- **Development**: Use findings for development approach
+
+### Troubleshooting SPIKE Integration
+- **Root Cause Analysis**: Use findings for RCA
+- **Problem Resolution**: Use findings for problem resolution
+- **Prevention**: Use findings for prevention measures
+- **Documentation**: Document lessons learned
+
+## Quality Standards
+
+### SPIKE Documentation
+- **Clear Objective**: Well-defined investigation objective
+- **Systematic Approach**: Structured investigation approach
+- **Evidence-Based**: Findings supported by evidence
+- **Actionable Recommendations**: Clear, actionable recommendations
+- **Options Analysis**: Multiple options with pros/cons
+
+### SPIKE Code
+- **Prototype Quality**: Working proof of concept
+- **Documentation**: Well-documented code
+- **Testing**: Basic testing of prototype
+- **Reusability**: Code that can be reused or adapted
+
+## Best Practices
+
+### SPIKE Management
+- **Time-boxing**: Strict time limits (1-3 days)
+- **Focus**: Single, well-defined objective
+- **Documentation**: Comprehensive documentation
+- **Options**: Always present multiple options
+- **Recommendations**: Clear recommendations with rationale
+
+### SPIKE Execution
+- **Systematic Approach**: Follow structured investigation process
+- **Evidence Gathering**: Collect concrete evidence
+- **Prototyping**: Create working prototypes when possible
+- **Testing**: Test hypotheses and assumptions
+- **Documentation**: Document all findings and decisions
+
+## SPIKE vs Root Cause Analysis
+
+### Key Differences
+- **SPIKE**: Time-boxed investigation for uncertainty/ambiguity
+- **RCA**: Systematic analysis of known problems
+- **SPIKE**: Focus on options and recommendations
+- **RCA**: Focus on root cause identification
+
+### When to Use Each
+- **Use SPIKE**: When uncertainty exists about approach or solution
+- **Use RCA**: When problem is known but root cause is unclear
+- **Combine**: Use SPIKE findings to inform RCA process
+
+## Common Pitfalls
+
+### Avoid These Mistakes
+- **Scope Creep**: Don't expand beyond original objective
+- **Time Overrun**: Don't exceed time-boxed duration
+- **Single Option**: Don't present only one option
+- **No Evidence**: Don't make recommendations without evidence
+- **Poor Documentation**: Don't skip documentation
+
+### Success Factors
+- **Clear Objective**: Well-defined investigation goal
+- **Time Management**: Strict adherence to time limits
+- **Evidence-Based**: All conclusions supported by evidence
+- **Multiple Options**: Always present alternatives
+- **Clear Recommendations**: Actionable recommendations with rationale

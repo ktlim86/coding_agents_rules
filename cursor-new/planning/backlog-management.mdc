@@ -1,0 +1,245 @@
+---
+description: Backlog Management for Planning Phase
+globs: ["backlogs/**/*.md"]
+alwaysApply: false
+---
+
+# Backlog Management for Planning Phase
+
+## Purpose
+Store and manage good ideas and suggestions that are not immediately needed for MVP but may be considered for future development. Backlog serves as a repository for future consideration when MVP is complete and additional features are needed.
+
+## Backlog Management Process
+
+### 1. Backlog Item Creation
+```
+Process Flow:
+Good Idea → Product Owner Decision → Backlog Storage → Future Consideration
+```
+
+### 2. Backlog Item Lifecycle
+```
+Status Flow:
+Idea → Backlog → Future Consideration → Implementation (if chosen)
+```
+
+## Backlog Item Structure
+
+### Backlog Item Template
+```
+# Backlog-[ID]: [Idea Name]
+
+## Basic Information
+- Backlog ID: [backlog_01, backlog_02, etc.]
+- Idea Name: [Clear, descriptive name]
+- Status: [Backlog/Future Consideration/Implemented/Rejected]
+- Created Date: [YYYY-MM-DD] (Required for aging calculation)
+- Created By: [AI Assistant/Product Owner]
+- Reason for Backlog: [Why this idea was put in backlog instead of immediate implementation]
+
+## Idea Description
+- Description: [Detailed description of the idea]
+- Business Value: [Potential value proposition and benefits]
+- User Impact: [How users might benefit]
+- MVP Relevance: [Why it's not needed for MVP]
+
+## Future Considerations
+- When to Consider: [When this idea might be relevant]
+- Prerequisites: [What needs to be in place first]
+- Dependencies: [What this idea depends on]
+- Implementation Complexity: [High/Medium/Low complexity estimate]
+
+## Notes
+- Additional Notes: [Any additional thoughts or considerations]
+- Related Ideas: [Links to related backlog items]
+- Research References: [Links to external documentation or research]
+
+## History
+- [Date] - [Action] - [Notes]
+- [Date] - [Action] - [Notes]
+```
+
+## Date Commands
+- **Reference**: See `@date-commands.mdc` for date/time commands
+- **Format**: Use `yyyy-MM-dd HH:mm:ss` format for all date fields
+
+## Backlog Organization
+
+### Directory Structure
+```
+backlogs/
+├── backlog_01_advanced_analytics.md
+├── backlog_02_mobile_app.md
+├── backlog_03_ai_recommendations.md
+└── ...
+```
+
+### File Naming Convention
+```
+Format: backlog_[ID]_[idea_name].md
+Example: backlog_01_advanced_analytics.md
+```
+
+### Backlog Item Categories
+- **Future Features**: Ideas for future functionality
+- **Enhancements**: Potential improvements to existing features
+- **Advanced Capabilities**: Advanced features for post-MVP
+- **Integration Ideas**: Potential third-party integrations
+- **Performance Ideas**: Performance optimization suggestions
+- **User Experience**: UX/UI improvement ideas
+- **Business Features**: Business-focused feature ideas
+
+## Backlog Management Guidelines
+
+### Backlog Item Quality Standards
+- **Clear Description**: Idea is clearly described and understood
+- **Future Value**: Potential value for future consideration
+- **MVP Separation**: Clear reason why it's not needed for MVP
+- **Implementation Notes**: Basic implementation considerations
+- **Timing Considerations**: When this idea might be relevant
+
+### Backlog Management Process
+- **Idea Capture**: Capture good ideas that come up during development
+- **Product Owner Decision**: Product Owner decides to backlog vs. implement
+- **Documentation**: Document the idea with context and reasoning
+- **Future Reference**: Maintain for future consideration when MVP is complete
+
+### Review Process
+- **Periodic Review**: Review backlog items when considering post-MVP features
+- **Value Assessment**: Evaluate potential value for future development
+- **Feasibility Check**: Assess technical feasibility when considering implementation
+- **Priority Assessment**: Determine priority when moving from backlog to implementation
+
+## Backlog to Implementation
+
+### Future Implementation Process
+```
+Backlog Item → Future Review → Requirements Gathering → Story Card Creation → Development
+```
+
+### When to Consider Backlog Items
+- **Post-MVP**: When MVP is complete and additional features are needed
+- **Feature Requests**: When users request features that are in backlog
+- **Business Needs**: When business requirements change and backlog items become relevant
+- **Technical Opportunities**: When technical capabilities enable backlog ideas
+
+### Implementation Guidelines
+- **Requirements Gathering**: Use `@conceptualization/requirements-gathering.mdc` for detailed requirements
+- **Story Card Creation**: Use `@planning/story-card-creation.mdc` for story card creation
+- **Estimation**: Use `@planning/estimation.mdc` for story point estimation
+- **Development**: Follow normal development process with approved story cards
+
+## Backlog Maintenance
+
+### Regular Maintenance Tasks
+- **Status Updates**: Update status when items are considered or implemented
+- **Content Updates**: Keep descriptions current and accurate
+- **Reference Updates**: Update references and links as needed
+- **Review Notes**: Add notes when items are reviewed for future consideration
+
+### Backlog Cleanup
+- **Remove Obsolete Items**: Remove ideas that are no longer relevant
+- **Consolidate Similar Ideas**: Combine similar ideas where appropriate
+- **Archive Implemented Items**: Archive items that have been implemented
+- **Update Context**: Update context and reasoning as needed
+
+## Integration with Other Processes
+
+### Integration with Requirements Gathering
+- **Future Requirements**: Backlog items can become future requirements
+- **Requirements Analysis**: Use requirements gathering process when implementing backlog items
+- **Context Preservation**: Maintain context from backlog when creating requirements
+
+### Integration with Story Card Creation
+- **Future Implementation**: Backlog items can be converted to story cards when implemented
+- **Templates**: Use story card templates when converting backlog items
+- **Standards**: Follow story card quality standards for implementation
+
+### Integration with Development Process
+- **Post-MVP Development**: Backlog items become development tasks after MVP
+- **Normal Process**: Follow normal development process when implementing backlog items
+- **Context Transfer**: Transfer context from backlog to development
+
+## Backlog Metrics and KPIs
+
+### Backlog Health Metrics
+- **Backlog Size**: Total number of backlog items
+- **Status Distribution**: Distribution of items by status
+- **Age Analysis**: Age of backlog items (calculated from Created Date)
+- **Implementation Rate**: Rate of backlog items that get implemented
+
+### Future Value Metrics
+- **Potential Value**: Average potential value of backlog items
+- **User Impact Potential**: Potential user impact of backlog items
+- **Business Value Potential**: Potential business value of backlog items
+- **Implementation Complexity**: Average complexity of backlog items
+
+### Maintenance Metrics
+- **Update Frequency**: How often backlog items are updated
+- **Review Frequency**: How often backlog items are reviewed
+- **Cleanup Rate**: Rate of obsolete items removed
+- **Consolidation Rate**: Rate of similar items consolidated
+
+### Aging Analysis
+- **Age Calculation**: Age = Current Date - Created Date
+- **Age Categories**: 
+  - New (0-30 days)
+  - Recent (31-90 days)
+  - Old (91-365 days)
+  - Very Old (365+ days)
+- **Aging Reports**: Regular reports on backlog item aging
+- **Review Triggers**: Review items based on age thresholds
+
+## Best Practices
+
+### Backlog Management Best Practices
+- **Idea Capture**: Capture good ideas as they come up during development
+- **Clear Descriptions**: Write clear, detailed descriptions of ideas
+- **Future Focus**: Focus on potential future value and relevance
+- **MVP Separation**: Clearly explain why ideas are not needed for MVP
+- **Context Preservation**: Maintain context and reasoning for future reference
+- **Documentation**: Maintain comprehensive documentation
+
+### Quality Assurance
+- **Description Clarity**: Ensure ideas are clearly described
+- **Context Completeness**: Include sufficient context for future consideration
+- **Reasoning Documentation**: Document why ideas are backlogged vs. implemented
+- **Future Relevance**: Consider when ideas might become relevant
+- **Implementation Notes**: Include basic implementation considerations
+
+### Communication
+- **Idea Documentation**: Document ideas when they are backlogged
+- **Context Sharing**: Share context with team when ideas are considered
+- **Status Updates**: Update status when ideas are reviewed or implemented
+- **Decision Documentation**: Document decisions about backlog items
+- **Future Reference**: Maintain for future reference and consideration
+
+## Tools and Templates
+
+### Backlog Management Tools
+- **File-based System**: Use markdown files for backlog items
+- **Version Control**: Use Git for version control and collaboration
+- **Templates**: Use standardized templates for consistency
+- **Simple Organization**: Keep organization simple and focused
+
+### Templates and Checklists
+- **Backlog Item Template**: Standardized template for backlog items
+- **Review Checklist**: Checklist for backlog item reviews
+- **Quality Checklist**: Checklist for backlog item quality
+- **Implementation Checklist**: Checklist for implementing backlog items
+
+## Continuous Improvement
+
+### Process Improvement
+- **Regular Assessment**: Assess backlog management process regularly
+- **Feedback Collection**: Collect feedback on backlog usefulness
+- **Process Refinement**: Refine process based on experience
+- **Template Enhancement**: Enhance templates as needed
+- **Usage Patterns**: Understand how backlog is used
+
+### Metrics and Analysis
+- **Usage Metrics**: Track how often backlog items are referenced
+- **Implementation Metrics**: Track which items get implemented
+- **Value Metrics**: Assess value of backlog items
+- **Process Metrics**: Track backlog management process effectiveness
+- **Lessons Learned**: Document and share lessons learned

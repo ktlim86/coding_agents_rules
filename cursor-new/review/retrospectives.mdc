@@ -1,0 +1,421 @@
+---
+description: Retrospectives and Continuous Improvement
+globs: ["docs/retrospectives/**/*"]
+alwaysApply: false
+---
+
+# Retrospectives and Continuous Improvement
+
+## Purpose
+Conduct regular retrospectives to evaluate team performance, identify improvement opportunities, and implement continuous improvement practices for MVP development.
+
+## Retrospective Principles
+
+### Continuous Improvement Focus
+- **Regular Reflection**: Regular evaluation of processes and outcomes
+- **Action-Oriented**: Focus on actionable improvements
+- **Team Collaboration**: Involve all team members in improvement process
+- **Data-Driven**: Use metrics and evidence to guide improvements
+- **Incremental Change**: Implement small, manageable improvements
+
+### Retrospective Types
+- **Sprint Retrospectives**: End-of-sprint team reflection
+- **Release Retrospectives**: Post-release evaluation
+- **Project Retrospectives**: End-of-project comprehensive review
+- **Incident Retrospectives**: Post-incident analysis and learning
+- **Process Retrospectives**: Regular process improvement sessions
+
+## Retrospective Framework
+
+### The 5 Whys
+- **Purpose**: Root cause analysis for problems
+- **Process**: Ask "why" five times to get to root cause
+- **Example**:
+  1. Why did the deployment fail? (Because the tests failed)
+  2. Why did the tests fail? (Because the database was down)
+  3. Why was the database down? (Because the connection pool was exhausted)
+  4. Why was the connection pool exhausted? (Because connections weren't being closed)
+  5. Why weren't connections being closed? (Because we don't have proper connection management)
+
+### Start, Stop, Continue
+- **Start**: New practices to begin
+- **Stop**: Practices to discontinue
+- **Continue**: Practices to maintain
+- **Benefits**: Simple, actionable format
+
+### Mad, Sad, Glad
+- **Mad**: What made us frustrated or angry
+- **Sad**: What made us disappointed or concerned
+- **Glad**: What made us happy or proud
+- **Benefits**: Emotional perspective on team experience
+
+### KALM (Keep, Add, Less, More)
+- **Keep**: Practices to maintain
+- **Add**: New practices to introduce
+- **Less**: Practices to reduce
+- **More**: Practices to increase
+- **Benefits**: Balanced view of current practices
+
+## Sprint Retrospectives
+
+### Sprint Retrospective Template
+```
+Sprint Retrospective - Sprint [Number]
+Date: [Date]
+Participants: [Team Members]
+Sprint Duration: [Start Date] to [End Date]
+
+## Sprint Summary
+- Stories Completed: [Number]
+- Stories In Progress: [Number]
+- Stories Blocked: [Number]
+- Velocity: [Story Points]
+
+## What Went Well
+- [Positive aspect 1]
+- [Positive aspect 2]
+- [Positive aspect 3]
+
+## What Could Be Improved
+- [Improvement area 1]
+- [Improvement area 2]
+- [Improvement area 3]
+
+## Action Items
+- [Action 1] - Owner: [Name] - Due: [Date]
+- [Action 2] - Owner: [Name] - Due: [Date]
+- [Action 3] - Owner: [Name] - Due: [Date]
+
+## Metrics
+- Sprint Velocity: [Points]
+- Burndown Chart: [Link]
+- Test Coverage: [Percentage]
+- Bug Count: [Number]
+- Deployment Success Rate: [Percentage]
+```
+
+### Sprint Retrospective Process
+1. **Preparation**: Gather sprint data and metrics
+2. **Opening**: Set context and objectives
+3. **Data Gathering**: Collect team feedback
+4. **Insights Generation**: Analyze patterns and themes
+5. **Decision Making**: Prioritize improvements
+6. **Action Planning**: Create specific action items
+7. **Closing**: Summarize and commit to actions
+
+## Release Retrospectives
+
+### Release Retrospective Template
+```
+Release Retrospective - Release [Version]
+Date: [Date]
+Participants: [Team Members]
+Release Date: [Date]
+Release Duration: [Start Date] to [End Date]
+
+## Release Summary
+- Features Delivered: [List]
+- Bugs Fixed: [Number]
+- Performance Improvements: [List]
+- User Feedback: [Summary]
+
+## Success Metrics
+- User Adoption: [Percentage]
+- Performance Metrics: [Data]
+- Error Rates: [Data]
+- User Satisfaction: [Score]
+
+## What Went Well
+- [Success 1]
+- [Success 2]
+- [Success 3]
+
+## Challenges Faced
+- [Challenge 1]
+- [Challenge 2]
+- [Challenge 3]
+
+## Lessons Learned
+- [Lesson 1]
+- [Lesson 2]
+- [Lesson 3]
+
+## Action Items
+- [Action 1] - Owner: [Name] - Due: [Date]
+- [Action 2] - Owner: [Name] - Due: [Date]
+- [Action 3] - Owner: [Name] - Due: [Date]
+
+## Next Release Planning
+- [Planning item 1]
+- [Planning item 2]
+- [Planning item 3]
+```
+
+## Project Retrospectives
+
+### Project Retrospective Template
+```
+Project Retrospective - [Project Name]
+Date: [Date]
+Participants: [Team Members]
+Project Duration: [Start Date] to [End Date]
+
+## Project Summary
+- Project Goals: [List]
+- Deliverables: [List]
+- Budget: [Amount]
+- Timeline: [Planned vs Actual]
+
+## Success Criteria Evaluation
+- [Criteria 1]: [Status] - [Notes]
+- [Criteria 2]: [Status] - [Notes]
+- [Criteria 3]: [Status] - [Notes]
+
+## What Went Well
+- [Success 1]
+- [Success 2]
+- [Success 3]
+
+## What Could Be Improved
+- [Improvement 1]
+- [Improvement 2]
+- [Improvement 3]
+
+## Key Learnings
+- [Learning 1]
+- [Learning 2]
+- [Learning 3]
+
+## Recommendations for Future Projects
+- [Recommendation 1]
+- [Recommendation 2]
+- [Recommendation 3]
+
+## Action Items
+- [Action 1] - Owner: [Name] - Due: [Date]
+- [Action 2] - Owner: [Name] - Due: [Date]
+- [Action 3] - Owner: [Name] - Due: [Date]
+```
+
+## Incident Retrospectives
+
+### Incident Retrospective Template
+```
+Incident Retrospective - [Incident ID]
+Date: [Date]
+Participants: [Team Members]
+Incident Date: [Date]
+Incident Duration: [Start Time] to [End Time]
+
+## Incident Summary
+- Incident Type: [Type]
+- Severity: [Level]
+- Impact: [Description]
+- Root Cause: [Cause]
+
+## Timeline
+- [Time] - [Event]
+- [Time] - [Event]
+- [Time] - [Event]
+
+## What Happened
+- [Event 1]
+- [Event 2]
+- [Event 3]
+
+## Why It Happened
+- [Root cause 1]
+- [Root cause 2]
+- [Root cause 3]
+
+## What We Did
+- [Action 1]
+- [Action 2]
+- [Action 3]
+
+## What We Learned
+- [Learning 1]
+- [Learning 2]
+- [Learning 3]
+
+## Action Items
+- [Action 1] - Owner: [Name] - Due: [Date]
+- [Action 2] - Owner: [Name] - Due: [Date]
+- [Action 3] - Owner: [Name] - Due: [Date]
+
+## Prevention Measures
+- [Measure 1]
+- [Measure 2]
+- [Measure 3]
+```
+
+## Metrics and KPIs
+
+### Team Performance Metrics
+- **Velocity**: Story points completed per sprint
+- **Burndown**: Progress toward sprint goals
+- **Cycle Time**: Time from story start to completion
+- **Lead Time**: Time from story creation to completion
+- **Throughput**: Number of stories completed per sprint
+
+### Quality Metrics
+- **Bug Rate**: Number of bugs per story
+- **Test Coverage**: Percentage of code covered by tests
+- **Code Review Coverage**: Percentage of code reviewed
+- **Deployment Success Rate**: Percentage of successful deployments
+- **Mean Time to Recovery**: Time to recover from failures
+
+### Process Metrics
+- **Sprint Goal Achievement**: Percentage of sprint goals met
+- **Story Completion Rate**: Percentage of stories completed
+- **Blocked Story Rate**: Percentage of stories blocked
+- **Rework Rate**: Percentage of work that needs rework
+- **Process Adherence**: Adherence to defined processes
+
+### User Experience Metrics
+- **User Satisfaction**: User feedback scores
+- **Feature Adoption**: Percentage of users using new features
+- **Performance Metrics**: Response times and throughput
+- **Error Rates**: Application error rates
+- **Support Tickets**: Number of support requests
+
+## Action Item Management
+
+### Action Item Template
+```
+Action Item: [Title]
+Description: [Detailed description]
+Owner: [Name]
+Due Date: [Date]
+Priority: [High/Medium/Low]
+Status: [Open/In Progress/Completed/Closed]
+Dependencies: [List of dependencies]
+Success Criteria: [How to measure success]
+```
+
+### Action Item Tracking
+- **Regular Review**: Weekly review of action items
+- **Progress Updates**: Regular progress updates
+- **Completion Verification**: Verify action item completion
+- **Impact Assessment**: Assess impact of completed actions
+- **Follow-up Actions**: Create follow-up actions if needed
+
+## Continuous Improvement Process
+
+### Improvement Cycle
+```
+1. Identify Improvement Opportunity
+   ↓
+2. Analyze Current State
+   ↓
+3. Design Improvement
+   ↓
+4. Implement Improvement
+   ↓
+5. Measure Results
+   ↓
+6. Evaluate Success
+   ↓
+7. Standardize or Iterate
+```
+
+### Improvement Categories
+- **Process Improvements**: Workflow and process enhancements
+- **Tool Improvements**: Tool selection and configuration
+- **Skill Improvements**: Team training and development
+- **Communication Improvements**: Team communication enhancements
+- **Quality Improvements**: Quality assurance enhancements
+
+## Retrospective Facilitation
+
+### Facilitation Guidelines
+- **Neutral Facilitation**: Facilitator should be neutral
+- **Equal Participation**: Ensure all team members participate
+- **Time Management**: Keep retrospectives within time limits
+- **Action Orientation**: Focus on actionable improvements
+- **Follow-up**: Ensure action items are tracked and completed
+
+### Facilitation Techniques
+- **Round Robin**: Go around the room for input
+- **Silent Writing**: Write thoughts before sharing
+- **Dot Voting**: Vote on most important items
+- **Affinity Mapping**: Group similar ideas
+- **Timeboxing**: Set time limits for activities
+
+## Documentation and Knowledge Sharing
+
+### Retrospective Documentation
+- **Meeting Notes**: Detailed meeting notes
+- **Action Items**: Tracked action items
+- **Metrics**: Relevant metrics and data
+- **Lessons Learned**: Key insights and learnings
+- **Process Updates**: Updated processes and procedures
+
+### Knowledge Sharing
+- **Team Sharing**: Share insights with team
+- **Cross-Team Sharing**: Share with other teams
+- **Documentation**: Document best practices
+- **Training**: Provide training on improvements
+- **Mentoring**: Mentor team members on improvements
+
+## Retrospective Tools
+
+### Digital Tools
+- **Miro**: Online whiteboard for retrospectives
+- **Retrospective.io**: Dedicated retrospective tool
+- **Jira**: Issue tracking and action item management
+- **Confluence**: Documentation and knowledge sharing
+- **Slack**: Team communication and updates
+
+### Physical Tools
+- **Whiteboard**: For in-person retrospectives
+- **Sticky Notes**: For idea generation and organization
+- **Markers**: For writing and drawing
+- **Timer**: For time management
+- **Flip Chart**: For large group activities
+
+## Retrospective Best Practices
+
+### Preparation
+- **Data Gathering**: Collect relevant data and metrics
+- **Agenda Setting**: Set clear agenda and objectives
+- **Environment Setup**: Prepare appropriate environment
+- **Tool Preparation**: Set up necessary tools
+- **Participant Preparation**: Brief participants on objectives
+
+### Execution
+- **Time Management**: Keep activities within time limits
+- **Equal Participation**: Ensure all voices are heard
+- **Focus on Actions**: Emphasize actionable improvements
+- **Document Everything**: Record all insights and actions
+- **Maintain Positivity**: Keep atmosphere constructive
+
+### Follow-up
+- **Action Item Tracking**: Track all action items
+- **Progress Updates**: Regular progress updates
+- **Completion Verification**: Verify action completion
+- **Impact Assessment**: Assess impact of improvements
+- **Continuous Monitoring**: Monitor ongoing improvements
+
+## Retrospective Success Factors
+
+### Team Engagement
+- **Active Participation**: All team members participate
+- **Open Communication**: Honest and open communication
+- **Constructive Feedback**: Focus on improvement, not blame
+- **Shared Ownership**: Team ownership of improvements
+- **Continuous Learning**: Commitment to continuous learning
+
+### Process Effectiveness
+- **Regular Schedule**: Consistent retrospective schedule
+- **Appropriate Duration**: Right amount of time
+- **Clear Objectives**: Clear goals and outcomes
+- **Actionable Results**: Focus on actionable improvements
+- **Follow-through**: Consistent follow-up on actions
+
+### Organizational Support
+- **Management Support**: Leadership support for improvements
+- **Resource Allocation**: Resources for improvement implementation
+- **Culture of Learning**: Learning-oriented organizational culture
+- **Recognition**: Recognition of improvement efforts
+- **Continuous Investment**: Ongoing investment in improvement

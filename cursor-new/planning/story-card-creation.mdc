@@ -1,0 +1,292 @@
+---
+description: Story Card Creation and Management
+globs: ["stories/*.md"]
+alwaysApply: false
+---
+
+# Story Card Creation and Management
+
+## Purpose
+Create well-structured, testable story cards that break down work into manageable, deliverable units following agile best practices and MVP principles.
+
+## Story Card Template
+
+### Basic Information
+```
+Story ID: [Unique identifier - e.g., STORY-001]
+Title: [Clear, descriptive title]
+Story Points: [XS(1), S(3), M(5), MH(8), L(13), XL(21)] - Note: L and XL must be broken down (de-risking)
+Priority: [High/Medium/Low]
+Status: [Not Started → Pending PO Approval → Dev In Progress → Testing In Progress → Pending PO Accepted → Done]
+Created Date: [YYYY-MM-DD]
+Assigned To: [Developer/Team]
+```
+
+### User Story
+```
+As a [user type]
+I want [functionality/feature]
+So that [benefit/value]
+```
+
+### Acceptance Criteria
+```
+AC1: [Specific, testable criterion]
+AC2: [Specific, testable criterion]
+AC3: [Specific, testable criterion]
+...
+```
+
+### Test Cases
+```
+TC1: [Test case description] → Maps to AC1
+TC2: [Test case description] → Maps to AC1
+TC3: [Test case description] → Maps to AC2
+...
+```
+
+### Development Information
+```
+Start Date: [YYYY-MM-DD HH:MM:SS Singapore Time]
+End Date: [YYYY-MM-DD HH:MM:SS Singapore Time] (When story is marked as Done)
+Duration: [X hours/days]
+Development Notes: [Key decisions, challenges, discoveries]
+```
+
+### Date Commands
+- **Reference**: See `@date-commands.mdc` for date/time commands
+- **Format**: Use `yyyy-MM-dd HH:mm:ss` format for all date fields
+
+
+### Dependencies
+```
+External Dependencies:
+- [Dependency description and impact]
+
+Internal Dependencies:
+- [Related story cards and relationships]
+```
+
+### Definition of Done
+```
+- [ ] All acceptance criteria met
+- [ ] All test cases pass
+- [ ] Code review completed
+- [ ] Documentation updated
+- [ ] No critical bugs
+- [ ] Product Owner acceptance
+```
+
+## Story Card Creation Process
+
+### 1. Story Identification
+- **User Value**: Identify user needs and pain points
+- **Business Value**: Align with business objectives
+- **Technical Value**: Address technical debt or improvements
+- **Size Appropriateness**: Ensure story is appropriately sized
+
+### 2. Story Writing
+- **User Story Format**: Follow "As a... I want... So that..." structure
+- **Clear Language**: Use simple, unambiguous language
+- **User-Focused**: Write from user perspective
+- **Value-Driven**: Focus on user and business value
+
+### 3. Acceptance Criteria Development
+- **Specific**: Clear, unambiguous criteria
+- **Testable**: Can be verified through testing
+- **Measurable**: Objective success criteria
+- **Complete**: Cover all aspects of the story
+- **Given-When-Then**: Use structured format when appropriate
+
+### 4. Test Case Mapping
+- **Coverage**: Each acceptance criterion has test cases
+- **Scenarios**: Cover positive, negative, and edge cases
+- **Traceability**: Clear mapping between test cases and acceptance criteria
+- **Evidence**: Test cases provide evidence of completion
+
+### 5. Estimation
+- **T-Shirt Sizing**: Use XS(1), S(3), M(5), MH(8), L(13), XL(21) points
+- **De-risking Rule**: Any story larger than 8 points (MH) must be broken down
+- **Relative Sizing**: Size relative to other stories
+- **Complexity Factors**: Consider technical complexity, uncertainty, dependencies
+- **Team Consensus**: Team agreement on estimates
+
+## Story Card Quality Standards
+
+### User Story Quality
+- **Independent**: Story can be developed independently
+- **Negotiable**: Details can be discussed and refined
+- **Valuable**: Provides clear value to users or business
+- **Estimable**: Team can estimate effort required
+- **Small**: Can be completed in single sprint
+- **Testable**: Can be verified through testing
+
+### Acceptance Criteria Quality
+- **SMART Criteria**: Specific, Measurable, Achievable, Relevant, Time-bound
+- **Testable**: Can be verified through automated or manual testing
+- **Complete**: Cover all aspects of the user story
+- **Clear**: Unambiguous and easy to understand
+- **Consistent**: Follow established patterns and formats
+
+### Test Case Quality
+- **Comprehensive**: Cover all acceptance criteria
+- **Realistic**: Use realistic test data and scenarios
+- **Automated**: Prefer automated testing when possible
+- **Evidence-Based**: Provide clear evidence of completion
+- **Maintainable**: Easy to update and maintain
+
+## Story Card Workflow
+
+### Status Transitions
+1. **Not Started**: Story card created, awaiting approval
+2. **Pending PO Approval**: Ready for Product Owner review
+3. **Dev In Progress**: Development has started
+4. **Testing In Progress**: Development complete, testing in progress
+5. **Pending PO Accepted**: Testing complete, awaiting PO acceptance
+6. **Done**: Story completed and accepted
+
+### Approval Gates
+- **PO Approval**: Required before development starts
+- **Development Complete**: All acceptance criteria met
+- **Testing Complete**: All test cases pass
+- **PO Acceptance**: Final acceptance by Product Owner
+
+### Status Updates
+- **Regular Updates**: Update status throughout development
+- **Date Tracking**: Record start and end dates
+- **End Date**: Set when story status changes to "Done"
+- **Duration Tracking**: Track actual vs. estimated time
+- **Notes**: Document key decisions and challenges
+
+## Story Card Organization
+
+### File Naming Convention
+```
+Format: story_[ID]_[title].md
+Example: story_001_user_authentication.md
+```
+
+### Directory Structure
+```
+stories/
+├── story_001_user_authentication.md
+├── story_002_dashboard_creation.md
+├── story_003_data_export.md
+└── ...
+```
+
+### Metadata Management
+- **Tags**: Categorize stories by feature, component, or priority
+- **Labels**: Add labels for easy filtering and organization
+- **Links**: Link related stories and dependencies
+- **References**: Link to requirements, designs, and documentation
+
+## Story Card Dependencies
+
+### Dependency Types
+- **Technical Dependencies**: Required technical components or services
+- **Data Dependencies**: Required data sources or structures
+- **Integration Dependencies**: External system integrations
+- **Resource Dependencies**: Required team members or skills
+- **Timeline Dependencies**: Sequential story dependencies
+
+### Dependency Management
+- **Dependency Identification**: Identify all dependencies early
+- **Impact Assessment**: Assess impact of dependencies on timeline
+- **Risk Mitigation**: Plan for dependency risks and alternatives
+- **Communication**: Communicate dependencies to stakeholders
+- **Tracking**: Track dependency status and resolution
+
+## Story Card Estimation
+
+### Estimation Techniques
+- **Planning Poker**: Team-based estimation using cards
+- **T-Shirt Sizing**: Relative sizing using clothing sizes
+- **Story Points**: Fibonacci sequence-based estimation
+- **Time-Based**: Hour or day-based estimation
+- **Comparative**: Comparison with similar completed stories
+
+### Estimation Factors
+- **Complexity**: Technical complexity and difficulty
+- **Uncertainty**: Unknown factors and risks
+- **Dependencies**: External dependencies and constraints
+- **Team Experience**: Team familiarity with technology
+- **Requirements Clarity**: Clarity of requirements and acceptance criteria
+
+### Estimation Guidelines
+- **Team Consensus**: All team members participate
+- **Historical Data**: Use data from similar completed stories
+- **Regular Review**: Review and adjust estimates based on actual performance
+- **Documentation**: Document estimation rationale and assumptions
+
+## Story Card Review Process
+
+### Review Criteria
+- **User Story Quality**: Follows INVEST principles
+- **Acceptance Criteria**: Clear, testable, complete
+- **Test Cases**: Comprehensive coverage and mapping
+- **Estimation**: Reasonable and well-justified
+- **Dependencies**: Identified and managed
+- **Definition of Done**: Clear and achievable
+
+### Review Participants
+- **Product Owner**: Business value and requirements validation
+- **Development Team**: Technical feasibility and estimation
+- **QA Team**: Testability and quality assurance
+- **UX Team**: User experience and design considerations
+- **Stakeholders**: Business and technical stakeholders
+
+### Review Process
+1. **Preparation**: Story card author prepares materials
+2. **Presentation**: Present story card to review team
+3. **Discussion**: Discuss requirements, acceptance criteria, and estimation
+4. **Feedback**: Collect feedback and suggestions
+5. **Revision**: Update story card based on feedback
+6. **Approval**: Final approval and sign-off
+
+## Story Breakdown and De-risking
+
+### De-risking Rule
+**Any story larger than 8 points (Medium High) must be broken down into smaller stories to reduce risk and improve estimation accuracy.**
+
+### When to Break Down Stories
+- **De-risking Rule**: Stories larger than 8 points (MH) must be broken down
+- **Size Threshold**: Stories larger than Medium High (8 points) should be broken down
+- **Complexity**: High complexity stories should be decomposed
+- **Dependencies**: Stories with many dependencies should be split
+- **Risk**: High-risk stories should be broken into smaller, manageable pieces
+- **Sprint Capacity**: Stories should fit within sprint capacity
+
+### Breakdown Techniques
+- **Feature Breakdown**: Split by feature or functionality
+- **Component Breakdown**: Split by system components
+- **Workflow Breakdown**: Split by user workflow steps
+- **Data Breakdown**: Split by data processing steps
+- **Integration Breakdown**: Split by integration points
+
+### Breakdown Guidelines
+- **Independence**: Each story should be independently deliverable
+- **Value**: Each story should provide user or business value
+- **Testability**: Each story should be testable
+- **Size**: Each story should be 8 points or less
+- **Clarity**: Each story should have clear requirements
+
+## Story Card Maintenance
+
+### Regular Updates
+- **Status Updates**: Regular status updates throughout development
+- **Progress Tracking**: Track progress against acceptance criteria
+- **Issue Documentation**: Document issues and resolutions
+- **Lessons Learned**: Capture lessons learned for future stories
+
+### Version Control
+- **Change Tracking**: Track all changes to story cards
+- **Version History**: Maintain version history for audit trail
+- **Approval Process**: Require approval for significant changes
+- **Communication**: Communicate changes to stakeholders
+
+### Quality Assurance
+- **Regular Reviews**: Regular review of story card quality
+- **Template Compliance**: Ensure adherence to templates and standards
+- **Completeness Check**: Verify all required sections are completed
+- **Consistency Review**: Ensure consistency across story cards

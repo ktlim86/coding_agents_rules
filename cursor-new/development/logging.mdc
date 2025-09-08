@@ -1,0 +1,116 @@
+---
+description: User experience guidelines for logging and error messages
+globs: ["**/*.py", "**/*.js", "**/*.ts", "**/*.java", "**/*.go", "**/*.rs"]
+alwaysApply: false
+---
+
+# User Experience in Logging
+
+## Overview
+All log messages must be specific, actionable, and include relevant context. Design logging for the person who will be debugging and monitoring the system in production.
+
+## Key Principles
+
+### 1. Specificity
+- Include relevant context (symbol names, data types, operation details)
+- Make messages self-contained and informative
+- Avoid generic messages that could apply to any situation
+
+### 2. Actionability
+- Tell the user what happened and what to do next
+- Distinguish between normal operations and issues requiring attention
+- Provide enough detail for troubleshooting
+
+### 3. Consistency
+- Use the same format across all components
+- Standardize emoji usage and message structure
+- Maintain consistent terminology
+
+### 4. Appropriate Levels
+- **INFO**: Normal operations, successful completions
+- **WARNING**: Recoverable issues, partial successes
+- **ERROR**: Actual failures requiring attention
+
+## Message Format Standards
+
+### Success Messages
+```
+✅ [Operation] completed successfully for [Context]: [Details]
+✅ Data stored successfully in both database and object storage for AAPL: balance_sheet
+✅ Collection completed for BRK.B: 150 records processed
+```
+
+### Warning Messages
+```
+⚠️ [Condition] for [Context]: [Details]
+⚠️ Data stored in object storage only for JPM/PC: balance_sheet
+⚠️ Using fallback method for AAPL: prices
+```
+
+### Info Messages
+```
+📝 [Normal condition] for [Context]: [Details]
+📝 No balance_sheet data available for JPM/PC - skipping storage
+📝 Object Storage only mode - skipping database insertion for AAPL: prices
+```
+
+### Error Messages
+```
+❌ [Failure type] for [Context]: [Specific error]
+❌ Failed to store data in both locations for AAPL: balance_sheet - Network timeout
+❌ Database connection failed for BRK.B: balance_sheet - Connection refused
+```
+
+## Context Requirements
+
+### Always Include
+- **Symbol name** (when applicable)
+- **Data type** (prices, balance_sheet, income_statement, etc.)
+- **Operation** (stored, collected, processed, etc.)
+- **Specific details** (record counts, error details, etc.)
+
+### Examples
+
+#### Good Messages
+```python
+# Specific and actionable
+logger.info(f"✅ Data stored successfully in both database and object storage for {symbol}: {data_type}")
+logger.warning(f"⚠️ Data stored in object storage only for {symbol}: {data_type}")
+logger.info(f"📝 No {data_type} data available for {symbol} - skipping storage")
+logger.error(f"❌ Failed to store data in both locations for {symbol}: {data_type} - {error_details}")
+```
+
+#### Bad Messages
+```python
+# Too generic
+logger.info("Data stored successfully")
+logger.warning("Data stored in object storage only")
+logger.error("Failed to store data")
+
+# Missing context
+logger.info(f"Data stored for {data_type}")
+logger.error(f"Error occurred: {e}")
+```
+
+## Emoji Usage Standards
+
+- ✅ **Success**: Completed operations, successful results
+- ⚠️ **Warning**: Recoverable issues, partial successes
+- 📝 **Info**: Normal conditions, informational messages
+- ❌ **Error**: Actual failures, system errors
+- 🔍 **Debug**: Diagnostic information, troubleshooting details
+- 🚀 **Start**: Process initiation, system startup
+- 🎯 **Target**: Specific goals, objectives, limits
+
+## Implementation Guidelines
+
+1. **Include Context**: Always include symbol names and data types
+2. **Be Specific**: Provide enough detail for troubleshooting
+3. **Use Consistent Format**: Follow the established message patterns
+4. **Choose Appropriate Level**: Match log level to message importance
+5. **Test Messages**: Ensure messages are clear when reading logs
+
+## Related Files
+- [trigger/batch/pipeline/data_pipeline.py](mdc:trigger/batch/pipeline/data_pipeline.py) - Data pipeline with logging
+- [trigger/batch/collectors/__main__.py](mdc:trigger/batch/collectors/__main__.py) - Main collector with logging
+

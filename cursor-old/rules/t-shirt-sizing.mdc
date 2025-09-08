@@ -1,0 +1,23 @@
+---
+description: T shirt sizing calculation of the story points
+globs: ["tasks/*.md"]
+alwaysApply: false
+---
+- Use T-shirt sizing: Extra Small (XS) 1 point, Small (S) 3 points, Medium (M) 8 points, Medium High (MH) 8 points, Large (L) 13 points, Large (XL) 21 points
+- Small stories: 1-2 days, simple requirements, low risk, minimal dependencies (e.g., adding form fields, UI text changes)
+- Medium stories: 3-5 days, moderate complexity, some dependencies, medium risk (e.g., new API endpoints, complex forms)
+- Large stories: 1-2 weeks, high complexity, multiple dependencies, higher risk (e.g., major features, complex integrations)
+- Break down stories larger than Large into smaller stories
+- Size relative to each other, not absolute time
+- Use Fibonacci sequence (1, 2, 3, 5, 8, 13, 21) for story points
+- Consider complexity, uncertainty, and dependencies when sizing
+- Write acceptance criteria in clear, unambiguous language
+- Focus on behavior and outcomes, not implementation
+- Make criteria testable and measurable
+- Use "Given-When-Then" format when appropriate
+- Keep criteria independent and atomic
+- Each test case must be small and focused
+- Test cases should be independent and repeatable
+- Each test case must map to at least one acceptance criteria
+- Cover both positive and negative scenarios
+- Write test cases before implementation (TDD approach)

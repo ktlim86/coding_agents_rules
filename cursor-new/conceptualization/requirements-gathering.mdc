@@ -1,0 +1,288 @@
+---
+description: Requirements Gathering for Conceptualization Phase
+globs: ["docs/requirements/**/*", "tasks/*.md"]
+alwaysApply: false
+---
+
+# Requirements Gathering
+
+## Purpose
+Accept requirements from Product Owner in various formats (text, images, transcripts) and convert them into clear, testable story cards that establish the foundation for MVP development.
+
+## Input Formats Accepted
+
+### Text Requirements
+- **Written descriptions**: Detailed text descriptions of features and functionality
+- **Bullet points**: Structured lists of requirements and features
+- **User stories**: Pre-written user stories in any format
+- **Business requirements**: Business objectives and constraints
+- **Technical specifications**: Technical requirements and constraints
+
+### Visual Requirements
+- **Images**: Screenshots, mockups, wireframes, diagrams
+- **Screenshots**: Existing system screenshots for reference
+- **Mockups**: Design mockups and prototypes
+- **Wireframes**: UI/UX wireframes and layouts
+- **Diagrams**: Process flows, system architecture diagrams
+- **Charts**: Data visualization requirements, reports
+
+### Audio/Video Requirements
+- **Transcripts**: Meeting transcripts, interview transcripts
+- **Voice recordings**: Audio descriptions of requirements
+- **Video recordings**: Video demonstrations or explanations
+- **Meeting notes**: Notes from requirement discussions
+
+## Requirements Processing Process
+
+### 1. Requirements Analysis
+```
+Analysis Steps:
+1. Parse input format (text, image, transcript)
+2. Extract key requirements and features
+3. Identify user stories and use cases
+4. Determine technical constraints
+5. Identify dependencies and relationships
+6. Assess complexity and effort
+```
+
+### 2. Story Card Creation
+```
+Story Card Generation:
+1. Convert requirements to user story format
+2. Create clear acceptance criteria
+3. Estimate story points using T-shirt sizing
+4. Identify dependencies and relationships
+5. Set priority based on business value
+6. Create test cases for each story
+```
+
+### 3. Requirements Validation
+```
+Validation Process:
+1. Review generated story cards with Product Owner
+2. Confirm accuracy of requirements interpretation
+3. Validate acceptance criteria completeness
+4. Verify story point estimates
+5. Confirm priority and dependencies
+6. Get Product Owner approval for story cards
+```
+
+## Story Card Generation Templates
+
+### From Text Requirements
+```
+Input: "I need a user login system with email and password"
+
+Generated Story Cards:
+- STORY-001: User Registration
+- STORY-002: User Login
+- STORY-003: Password Reset
+- STORY-004: User Profile Management
+```
+
+### From Image Requirements
+```
+Input: [Screenshot of login form]
+
+Generated Story Cards:
+- STORY-001: Login Form UI
+- STORY-002: Form Validation
+- STORY-003: Authentication Logic
+- STORY-004: Error Handling
+```
+
+### From Transcript Requirements
+```
+Input: [Meeting transcript about dashboard requirements]
+
+Generated Story Cards:
+- STORY-001: Dashboard Layout
+- STORY-002: Data Visualization
+- STORY-003: User Preferences
+- STORY-004: Real-time Updates
+```
+
+## Requirements Analysis Framework
+
+### Feature Extraction
+```python
+def extract_features_from_input(input_data, input_type):
+    """
+    Extract features from various input formats
+    
+    Evidence: Systematic feature extraction and story card generation
+    """
+    features = {
+        'user_stories': [],
+        'functional_requirements': [],
+        'non_functional_requirements': [],
+        'technical_constraints': [],
+        'dependencies': [],
+        'acceptance_criteria': []
+    }
+    
+    if input_type == 'text':
+        features = parse_text_requirements(input_data)
+    elif input_type == 'image':
+        features = parse_image_requirements(input_data)
+    elif input_type == 'transcript':
+        features = parse_transcript_requirements(input_data)
+    
+    return features
+```
+
+### Story Card Generation
+```python
+def generate_story_cards(features):
+    """
+    Generate story cards from extracted features
+    
+    Evidence: Automated story card creation with proper structure
+    """
+    story_cards = []
+    
+    for feature in features['user_stories']:
+        story_card = {
+            'id': generate_story_id(),
+            'title': feature['title'],
+            'user_story': feature['user_story'],
+            'acceptance_criteria': feature['acceptance_criteria'],
+            'story_points': estimate_story_points(feature),
+            'priority': determine_priority(feature),
+            'dependencies': identify_dependencies(feature),
+            'test_cases': generate_test_cases(feature)
+        }
+        story_cards.append(story_card)
+    
+    return story_cards
+```
+
+## Input Processing Guidelines
+
+### Text Processing
+- **Parse natural language**: Extract requirements from conversational text
+- **Identify user stories**: Convert requirements to "As a... I want... So that..." format
+- **Extract acceptance criteria**: Identify testable conditions
+- **Determine complexity**: Assess technical complexity and effort
+- **Identify dependencies**: Find relationships between requirements
+
+### Image Processing
+- **Analyze visual elements**: Identify UI components and layouts
+- **Extract functionality**: Determine features from visual design
+- **Identify user flows**: Map user interactions and workflows
+- **Determine technical requirements**: Assess implementation needs
+- **Create acceptance criteria**: Define visual and functional criteria
+
+### Transcript Processing
+- **Parse conversation**: Extract requirements from discussions
+- **Identify key points**: Find important requirements and decisions
+- **Resolve ambiguities**: Clarify unclear requirements
+- **Extract user stories**: Convert discussions to user stories
+- **Identify constraints**: Find technical and business constraints
+
+## Story Card Quality Standards
+
+### User Story Quality
+- **Independent**: Story can be developed independently
+- **Negotiable**: Details can be discussed and refined
+- **Valuable**: Provides clear value to users or business
+- **Estimable**: Team can estimate effort required
+- **Small**: Can be completed in single sprint
+- **Testable**: Can be verified through testing
+
+### Acceptance Criteria Quality
+- **SMART Criteria**: Specific, Measurable, Achievable, Relevant, Time-bound
+- **Testable**: Can be verified through automated or manual testing
+- **Complete**: Cover all aspects of the user story
+- **Clear**: Unambiguous and easy to understand
+- **Consistent**: Follow established patterns and formats
+
+### Test Case Quality
+- **Comprehensive**: Cover all acceptance criteria
+- **Realistic**: Use realistic test data and scenarios
+- **Automated**: Prefer automated testing when possible
+- **Evidence-Based**: Provide clear evidence of completion
+- **Maintainable**: Easy to update and maintain
+
+## Requirements Validation Process
+
+### Product Owner Review
+```
+Review Process:
+1. Present generated story cards to Product Owner
+2. Review each story card for accuracy
+3. Validate acceptance criteria completeness
+4. Confirm story point estimates
+5. Verify priority and dependencies
+6. Get approval for story cards
+7. Make revisions based on feedback
+8. Final approval for development
+```
+
+### Quality Assurance
+```
+QA Checklist:
+- [ ] All requirements converted to story cards
+- [ ] User stories follow proper format
+- [ ] Acceptance criteria are complete and testable
+- [ ] Story points are estimated using T-shirt sizing
+- [ ] Dependencies are identified and documented
+- [ ] Priority is set based on business value
+- [ ] Test cases are generated for each story
+- [ ] Product Owner approval obtained
+```
+
+## Output Deliverables
+
+### Primary Deliverables
+- **Story Cards**: Complete story cards with acceptance criteria
+- **Story Point Estimates**: T-shirt sized estimates for each story
+- **Dependency Map**: Relationships between stories
+- **Priority Matrix**: Business value and effort prioritization
+- **Test Cases**: Test cases for each story card
+
+### Supporting Deliverables
+- **Requirements Summary**: High-level requirements overview
+- **Technical Constraints**: Technical limitations and requirements
+- **Assumptions**: Assumptions made during analysis
+- **Risk Assessment**: Identified risks and mitigation strategies
+- **Product Owner Approval**: Signed-off story cards
+
+## Integration with Other Processes
+
+### Integration with Planning Phase
+- **Story Card Creation**: Use `@planning/story-card-creation.mdc` for structure
+- **Estimation**: Use `@planning/estimation.mdc` for story point sizing
+- **Sprint Planning**: Prepare stories for sprint planning
+
+### Integration with Development Phase
+- **Technical Analysis**: Use `@development/spike.mdc` for technical uncertainty
+- **Implementation**: Use `@development/engineering-principles.mdc` for coding
+- **Troubleshooting**: Use `@development/root-cause-analysis.mdc` for issues
+
+### Integration with Testing Phase
+- **Test Strategy**: Use `@integration-testing/evidence-based-testing.mdc` for testing
+- **Test Cases**: Use `@integration-testing/test-case-templates.mdc` for test structure
+
+## Best Practices
+
+### Requirements Analysis
+- **Ask Clarifying Questions**: Seek clarification for ambiguous requirements
+- **Validate Understanding**: Confirm interpretation with Product Owner
+- **Identify Assumptions**: Document assumptions made during analysis
+- **Consider Dependencies**: Identify relationships between requirements
+- **Assess Complexity**: Evaluate technical complexity and effort
+
+### Story Card Creation
+- **Follow Templates**: Use established story card templates
+- **Include Acceptance Criteria**: Ensure all stories have testable criteria
+- **Estimate Appropriately**: Use T-shirt sizing for story points
+- **Set Priorities**: Prioritize based on business value
+- **Generate Test Cases**: Create test cases for each story
+
+### Quality Assurance
+- **Review with Product Owner**: Get approval for all story cards
+- **Validate Completeness**: Ensure all requirements are covered
+- **Check Consistency**: Maintain consistency across story cards
+- **Verify Testability**: Ensure all stories are testable
+- **Document Decisions**: Record all decisions and rationale

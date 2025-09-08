@@ -1,0 +1,236 @@
+---
+description: Test Case Acceptance Templates
+globs: ["tests/**/*","tests/**/*test*.py", "tests/**/*test*.ts"]
+alwaysApply: false
+---
+
+# Test Case Acceptance Templates
+
+## Purpose
+Provide standardized templates for creating comprehensive test cases that provide concrete evidence of software functionality and meet acceptance criteria requirements.
+
+## Basic Test Case Template
+
+```python
+"""
+Test Case: [Test Case ID]
+Title: [Descriptive test case title]
+Story Card: [Related story card ID]
+Acceptance Criteria: [AC1, AC2, etc.]
+Priority: [High/Medium/Low]
+Type: [Unit/Integration/System/E2E]
+"""
+
+def test_[test_case_id]_[scenario]_[expected_result]():
+    """
+    Test Case: [Test Case ID]
+    Description: [Detailed description of what is being tested]
+    
+    Given: [Initial state/context]
+    When: [Action performed]
+    Then: [Expected result]
+    
+    Evidence: [What evidence this test provides]
+    """
+    # Arrange - Given
+    [Setup test data and initial state]
+    
+    # Act - When
+    [Execute the action being tested]
+    
+    # Assert - Then
+    [Verify expected results and evidence]
+```
+
+## Unit Test Templates
+
+### Function Testing Template
+```python
+def test_[function_name]_[input_scenario]_[expected_output]():
+    """Test [function_name] with [input_scenario] returns [expected_output]"""
+    # Arrange
+    input_data = [test_data]
+    expected = [expected_result]
+    
+    # Act
+    result = function_name(input_data)
+    
+    # Assert
+    assert result == expected
+    assert isinstance(result, [expected_type])
+```
+
+### Class Testing Template
+```python
+def test_[class_name]_[method]_[scenario]():
+    """Test [class_name].[method] with [scenario]"""
+    # Arrange
+    instance = ClassName([constructor_params])
+    
+    # Act
+    result = instance.method([method_params])
+    
+    # Assert
+    assert result == [expected_result]
+    assert instance.state == [expected_state]
+```
+
+## Integration Test Templates
+
+### API Testing Template
+```python
+def test_api_[endpoint]_[method]_[scenario]():
+    """Test API [endpoint] [method] with [scenario]"""
+    # Arrange
+    url = f"{base_url}/[endpoint]"
+    headers = {"Content-Type": "application/json"}
+    payload = [test_data]
+    
+    # Act
+    response = requests.[method](url, json=payload, headers=headers)
+    
+    # Assert
+    assert response.status_code == [expected_status]
+    assert response.json() == [expected_response]
+```
+
+### Database Testing Template
+```python
+def test_database_[operation]_[scenario]():
+    """Test database [operation] with [scenario]"""
+    # Arrange
+    test_data = [test_data]
+    
+    # Act
+    result = database_operation(test_data)
+    
+    # Assert
+    assert result == [expected_result]
+    # Verify data in database
+    db_record = get_from_database([criteria])
+    assert db_record == [expected_record]
+```
+
+## System Test Templates
+
+### End-to-End Testing Template
+```python
+def test_e2e_[user_workflow]_[scenario]():
+    """Test end-to-end [user_workflow] with [scenario]"""
+    # Arrange
+    user = create_test_user()
+    login_user(user)
+    
+    # Act
+    [perform_user_actions]
+    
+    # Assert
+    assert [verify_expected_outcome]
+    # Take screenshot for evidence
+    take_screenshot("e2e_[workflow]_[scenario]")
+```
+
+### UI Testing Template
+```python
+def test_ui_[component]_[interaction]():
+    """Test UI [component] [interaction]"""
+    # Arrange
+    driver = setup_webdriver()
+    navigate_to_page("[page_url]")
+    
+    # Act
+    [perform_ui_interaction]
+    
+    # Assert
+    assert [verify_ui_state]
+    # Take screenshot for evidence
+    take_screenshot("ui_[component]_[interaction]")
+```
+
+## Test Case Quality Standards
+
+### Test Case Structure
+- **Clear Title**: Descriptive test case title
+- **Given-When-Then**: Structured test description
+- **Evidence**: Clear evidence of functionality
+- **Traceability**: Link to acceptance criteria
+- **Independence**: Test can run independently
+
+### Test Data Management
+- **Realistic Data**: Use realistic test data
+- **Data Isolation**: Each test uses isolated data
+- **Data Cleanup**: Clean up test data after test
+- **Data Validation**: Validate test data quality
+
+### Assertion Standards
+- **Specific Assertions**: Test specific behavior
+- **Multiple Assertions**: Test multiple aspects
+- **Error Handling**: Test error conditions
+- **Edge Cases**: Test boundary conditions
+
+## Test Case Organization
+
+### File Naming Convention
+- **Unit Tests**: `test_[module_name].py`
+- **Integration Tests**: `test_integration_[component].py`
+- **System Tests**: `test_system_[feature].py`
+- **E2E Tests**: `test_e2e_[workflow].py`
+
+### Test Case Naming
+- **Function Tests**: `test_[function]_[scenario]_[expected]`
+- **Class Tests**: `test_[class]_[method]_[scenario]`
+- **API Tests**: `test_api_[endpoint]_[method]_[scenario]`
+- **UI Tests**: `test_ui_[component]_[interaction]`
+
+## Test Case Documentation
+
+### Test Case Header
+```python
+"""
+Test Case: TC-001
+Title: User Authentication with Valid Credentials
+Story Card: STORY-001
+Acceptance Criteria: AC1, AC2
+Priority: High
+Type: Integration
+Created: 2024-01-15
+Author: [Developer Name]
+
+## Date Commands
+- **Reference**: See `@date-commands.mdc` for date/time commands
+- **Format**: Use `yyyy-MM-dd HH:mm:ss` format for all date fields
+"""
+```
+
+### Test Case Description
+```python
+"""
+Description: Test user authentication with valid credentials
+
+Given: User has valid username and password
+When: User submits login form with valid credentials
+Then: User is authenticated and redirected to dashboard
+
+Evidence: 
+- Authentication token is generated
+- User session is created
+- Dashboard page is displayed
+- User profile is loaded
+"""
+```
+
+## Best Practices
+
+### Test Case Design
+- **Single Responsibility**: Each test tests one thing
+- **Clear Purpose**: Test purpose is obvious
+- **Maintainable**: Easy to update and maintain
+- **Reliable**: Test produces consistent results
+- **Fast**: Test runs quickly
+
+### Test Case Execution
+- **Isolation**: Tests don't depend on each other
+- **Repeatability**: Tests can be run multiple times
+- **Deterministic**: Tests produce same result every time
+- **Evidence**: Tests provide clear evidence of functionality
+- **Documentation**: Tests are well-documented

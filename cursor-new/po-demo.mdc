@@ -1,0 +1,253 @@
+---
+description: Product Owner Demonstration Requirements
+globs: ["demo/**/*", "stories/*.md"]
+alwaysApply: false
+---
+
+# Product Owner Demonstration Requirements
+
+## Purpose
+Create executable demo code for completed stories that demonstrates functionality to the Product Owner. Demo code must include clear story card references so the PO knows which story is being demonstrated.
+
+## Demo Requirements
+
+### Before Task Completion
+- **Working Demo**: Provide executable demonstration of implemented features
+- **Visual Evidence**: Show screenshots, outputs, or live demonstrations
+- **User Story Validation**: Confirm implementation satisfies user story requirements
+- **Acceptance Criteria Check**: Verify all acceptance criteria are met
+- **Product Owner Review**: Implementation must be demonstrated and accepted
+- **No Self-Approval**: Implementation must be demonstrated and accepted
+
+### Demo Components
+
+#### 1. Working Code Demonstration
+- **Executable Code**: Provide runnable demonstration code
+- **Core Functionality**: Show main features working as expected
+- **Integration**: Demonstrate integration with existing system components
+- **Error Handling**: Show error handling and edge case scenarios
+- **Performance**: Provide performance metrics and benchmarks if applicable
+
+#### 2. Visual Evidence
+- **Screenshots**: Capture key functionality screenshots
+- **Output Examples**: Show actual outputs and results
+- **Live Demo**: Provide live demonstration when possible
+- **User Workflow**: Show complete user workflow from start to finish
+- **Data Validation**: Demonstrate data validation and business rule enforcement
+
+#### 3. Documentation and Instructions
+- **Demo Instructions**: Clear instructions on how to run the demo
+- **Configuration**: Show configuration and customization options
+- **API Testing**: Provide API endpoint testing and validation
+- **Database Operations**: Show database operations and data persistence
+- **Deployment**: Provide deployment and configuration instructions
+
+## Demo Code Structure
+
+### Demo Folder Organization
+```
+demo/
+├── story_001_user_authentication/
+│   ├── README.md                    # Demo instructions
+│   ├── demo.py                      # Main demo script
+│   ├── test_data.json              # Test data
+│   ├── screenshots/                 # Visual evidence
+│   │   ├── login_screen.png
+│   │   ├── dashboard.png
+│   │   └── error_handling.png
+│   └── requirements.txt             # Dependencies
+├── story_002_dashboard_creation/
+│   ├── README.md
+│   ├── demo.py
+│   ├── test_data.json
+│   └── screenshots/
+└── ...
+```
+
+### Demo Script Template
+```python
+#!/usr/bin/env python3
+"""
+Demo Script for Story Card: STORY-001
+Story Title: User Authentication System
+Story Card Location: stories/story_001_user_authentication.md
+Purpose: Demonstrate user authentication functionality to Product Owner
+
+Acceptance Criteria:
+- AC1: User can login with valid credentials
+- AC2: User is redirected to dashboard after successful login
+- AC3: User receives error message for invalid credentials
+
+Demo Date: 2025-09-07 22:18:57
+"""
+
+import sys
+import json
+from datetime import datetime
+
+def main():
+    """Main demo function"""
+    print("=" * 60)
+    print("DEMO: STORY-001 - User Authentication System")
+    print("Story Card: stories/story_001_user_authentication.md")
+    print(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 60)
+    
+    # Demo steps
+    demo_step_1_valid_login()
+    demo_step_2_invalid_login()
+    demo_step_3_dashboard_redirect()
+    
+    print("\n" + "=" * 60)
+    print("DEMO COMPLETED SUCCESSFULLY")
+    print("All acceptance criteria validated")
+    print("=" * 60)
+
+def demo_step_1_valid_login():
+    """Demo step 1: Valid user login (AC1)"""
+    print("\n1. Testing valid user login (AC1)")
+    # Implementation code
+    print("   ✓ User can login with valid credentials")
+    print("   ✓ AC1 validated")
+
+def demo_step_2_invalid_login():
+    """Demo step 2: Invalid login error handling (AC3)"""
+    print("\n2. Testing invalid login error handling (AC3)")
+    # Implementation code
+    print("   ✓ User receives error message for invalid credentials")
+    print("   ✓ AC3 validated")
+
+def demo_step_3_dashboard_redirect():
+    """Demo step 3: Dashboard redirect after login (AC2)"""
+    print("\n3. Testing dashboard redirect after login (AC2)")
+    # Implementation code
+    print("   ✓ User is redirected to dashboard after successful login")
+    print("   ✓ AC2 validated")
+
+if __name__ == "__main__":
+    main()
+```
+
+### Demo README Template
+```markdown
+# Demo: STORY-001 - User Authentication System
+
+## Story Card Reference
+- **Story Card**: `stories/story_001_user_authentication.md`
+- **Story ID**: STORY-001
+- **Story Title**: User Authentication System
+- **Story Points**: M (5 points)
+- **Priority**: High
+
+## Purpose
+Demonstrate user authentication functionality implementation to Product Owner.
+
+## Prerequisites
+- Python 3.8+
+- Required dependencies (see requirements.txt)
+- Test database setup
+
+## How to Run
+1. Navigate to demo directory: `cd demo/story_001_user_authentication/`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run demo: `python demo.py`
+4. Follow on-screen instructions
+
+## Demo Steps
+1. **Valid Login (AC1)**: Test user login with valid credentials
+2. **Invalid Login (AC3)**: Test error handling for invalid credentials
+3. **Dashboard Redirect (AC2)**: Test redirect to dashboard after login
+
+## Expected Results
+- User can login with valid credentials (AC1)
+- User is redirected to dashboard after successful login (AC2)
+- User receives error message for invalid credentials (AC3)
+
+## Screenshots
+- `screenshots/login_screen.png` - Login form display
+- `screenshots/dashboard.png` - Dashboard after successful login
+- `screenshots/error_message.png` - Error message for invalid login
+
+## Acceptance Criteria Validation
+- [x] AC1: User can login with valid credentials - Validated in demo_step_1()
+- [x] AC2: User is redirected to dashboard after successful login - Validated in demo_step_3()
+- [x] AC3: User receives error message for invalid credentials - Validated in demo_step_2()
+
+## Notes
+- Demo uses test data from test_data.json
+- All acceptance criteria are validated in the demo script
+- Screenshots provide visual evidence of functionality
+```
+
+## Demo Process
+
+### 1. Demo Preparation
+- **Code Review**: Ensure code is complete and tested
+- **Demo Script**: Create executable demo script
+- **Test Data**: Prepare realistic test data
+- **Screenshots**: Capture visual evidence
+- **Documentation**: Write clear demo instructions
+
+### 2. Demo Execution
+- **Live Demonstration**: Show working functionality
+- **Step-by-Step**: Walk through each feature
+- **User Perspective**: Demonstrate from user's point of view
+- **Edge Cases**: Show error handling and edge cases
+- **Integration**: Demonstrate system integration
+
+### 3. Demo Validation
+- **Acceptance Criteria**: Verify all criteria are met
+- **User Story**: Confirm story requirements are satisfied
+- **Performance**: Show performance metrics if applicable
+- **Security**: Demonstrate security measures if applicable
+- **Compliance**: Show regulatory compliance if applicable
+
+### 4. Demo Feedback
+- **Product Owner Review**: Get PO feedback and approval
+- **Address Issues**: Fix any identified problems
+- **Document Changes**: Record any deviations from requirements
+- **Final Approval**: Get final PO sign-off
+
+## Integration with Story Cards
+
+### Story Card Demo Section
+```markdown
+## Demo Information
+- Demo Location: `demo/story_[ID]_[title]/`
+- Demo Script: `demo.py`
+- Demo Instructions: `README.md`
+- Screenshots: `screenshots/` folder
+- Demo Date: [YYYY-MM-DD HH:MM:SS]
+- PO Approval: [Pending/Approved/Rejected]
+- PO Feedback: [Feedback notes]
+```
+
+### Demo Status Tracking
+- **Demo Created**: Demo code and documentation ready
+- **Demo Scheduled**: Demo scheduled with Product Owner
+- **Demo Completed**: Demo executed successfully
+- **PO Approved**: Product Owner approved implementation
+- **Demo Rejected**: Demo needs revision based on PO feedback
+
+## Best Practices
+
+### Demo Quality
+- **Working Code**: Ensure demo code actually works
+- **Realistic Data**: Use realistic test data
+- **Clear Instructions**: Provide step-by-step instructions
+- **Visual Evidence**: Include screenshots and outputs
+- **Error Handling**: Show error scenarios and handling
+
+### Demo Presentation
+- **User Focus**: Demonstrate from user perspective
+- **Complete Workflow**: Show end-to-end functionality
+- **Performance**: Include performance metrics
+- **Integration**: Show system integration
+- **Documentation**: Provide clear documentation
+
+### Demo Maintenance
+- **Keep Updated**: Update demo when code changes
+- **Version Control**: Track demo versions
+- **Documentation**: Maintain demo documentation
+- **Testing**: Test demo before presentation
+- **Feedback**: Incorporate PO feedback

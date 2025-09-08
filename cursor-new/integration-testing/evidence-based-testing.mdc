@@ -1,0 +1,235 @@
+---
+description: Evidence-Based Testing Strategy
+globs: ["tests/**/*","tests/**/*test*.py", "tests/**/*test*.ts"]
+alwaysApply: false
+---
+
+# Evidence-Based Testing Strategy
+
+## Purpose
+Implement comprehensive testing that provides concrete evidence that software works correctly, using real environments and data whenever possible, with minimal use of mocks.
+
+## Testing Principles
+
+### Evidence-Based Testing
+- **Real Environment Testing**: Test as close to production as possible
+- **Minimal Mocking**: Avoid mocks unless absolutely necessary
+- **Concrete Evidence**: Provide proof that software works
+- **Real Data Validation**: Use realistic data structures and scenarios
+- **External Service Validation**: Test actual external service connectivity
+
+### Testing Pyramid
+```
+        /\
+       /  \
+      / E2E \     <- Few, comprehensive end-to-end tests
+     /______\
+    /        \
+   /Integration\  <- Some integration tests
+  /____________\
+ /              \
+/    Unit Tests   \  <- Many fast unit tests
+/________________\
+```
+
+### Test Categories
+1. **Unit Tests**: Test individual functions/methods in isolation
+2. **Integration Tests**: Test component interactions
+3. **System Tests**: Test complete system functionality
+4. **End-to-End Tests**: Test complete user workflows
+5. **Performance Tests**: Test system performance characteristics
+6. **Security Tests**: Test security vulnerabilities and controls
+
+## Test Case Templates
+
+### Unit Test Template
+```python
+def test_[function_name]_[scenario]_[expected_result]():
+    """
+    Test [function_name] when [scenario] should [expected_result]
+    
+    Evidence: [What evidence this test provides]
+    """
+    # Arrange
+    input_data = [test_data]
+    expected = [expected_result]
+    
+    # Act
+    result = function_name(input_data)
+    
+    # Assert
+    assert result == expected
+    assert isinstance(result, [expected_type])
+```
+
+### Integration Test Template
+```python
+def test_integration_[component]_[interaction]():
+    """
+    Test integration between [component] and [interaction]
+    
+    Evidence: [What evidence this test provides]
+    """
+    # Arrange
+    [setup_real_components]
+    
+    # Act
+    result = [perform_integration_action]
+    
+    # Assert
+    assert result == [expected_result]
+    # Verify actual data/state changes
+```
+
+### End-to-End Test Template
+```python
+def test_e2e_[user_workflow]_[scenario]():
+    """
+    Test end-to-end [user_workflow] with [scenario]
+    
+    Evidence: [What evidence this test provides]
+    """
+    # Arrange
+    [setup_test_environment]
+    
+    # Act
+    [perform_user_workflow]
+    
+    # Assert
+    assert [verify_expected_outcome]
+    # Take screenshot for evidence
+    take_screenshot("e2e_[workflow]_[scenario]")
+```
+
+## Evidence Requirements
+
+### Unit Test Evidence
+- **Function Output**: Verify correct return values
+- **State Changes**: Verify internal state modifications
+- **Error Handling**: Verify proper error handling
+- **Edge Cases**: Verify boundary condition handling
+
+### Integration Test Evidence
+- **Data Flow**: Verify data flows correctly between components
+- **API Responses**: Verify API responses match expectations
+- **Database Changes**: Verify database operations work correctly
+- **External Service Calls**: Verify external service integration
+
+### System Test Evidence
+- **User Workflows**: Verify complete user workflows work
+- **Performance Metrics**: Verify performance meets requirements
+- **Security Controls**: Verify security measures work correctly
+- **Error Recovery**: Verify system recovers from errors
+
+## Real Environment Testing
+
+### Database Testing
+```python
+def test_database_[operation]_[scenario]():
+    """Test database [operation] with [scenario]"""
+    # Use real database connection
+    db = get_database_connection()
+    
+    # Perform operation
+    result = db.operation([test_data])
+    
+    # Verify in database
+    db_record = db.query([criteria])
+    assert db_record == [expected_record]
+```
+
+### External Service Testing
+```python
+def test_external_service_[service]_[operation]():
+    """Test external service [service] [operation]"""
+    # Use real service connection
+    service = get_service_connection()
+    
+    # Perform operation
+    result = service.operation([test_data])
+    
+    # Verify response
+    assert result.status_code == 200
+    assert result.json() == [expected_response]
+```
+
+### UI Testing with Screenshots
+```python
+def test_ui_[component]_[interaction]():
+    """Test UI [component] [interaction]"""
+    # Setup real browser
+    driver = setup_webdriver()
+    
+    # Perform interaction
+    [perform_ui_interaction]
+    
+    # Verify result
+    assert [verify_ui_state]
+    
+    # Take screenshot for evidence
+    take_screenshot("ui_[component]_[interaction]")
+```
+
+## Testing Best Practices
+
+### Test Design
+- **Single Responsibility**: Each test tests one thing
+- **Clear Purpose**: Test purpose is obvious
+- **Realistic Data**: Use realistic test data
+- **Evidence Focus**: Focus on providing evidence
+- **Maintainable**: Easy to update and maintain
+
+### Test Execution
+- **Isolation**: Tests don't depend on each other
+- **Repeatability**: Tests can be run multiple times
+- **Deterministic**: Tests produce same result every time
+- **Fast**: Tests run quickly
+- **Reliable**: Tests don't flake
+
+### Evidence Collection
+- **Screenshots**: Take screenshots for UI tests
+- **Logs**: Capture relevant logs
+- **Data Verification**: Verify actual data changes
+- **Performance Metrics**: Capture performance data
+- **Error Details**: Capture detailed error information
+
+## Test Organization
+
+### File Structure
+```
+tests/
+├── unit/
+│   ├── test_[module].py
+│   └── test_[component].py
+├── integration/
+│   ├── test_api_[endpoint].py
+│   └── test_database_[operation].py
+├── system/
+│   ├── test_[feature].py
+│   └── test_[workflow].py
+└── e2e/
+    ├── test_[user_journey].py
+    └── test_[critical_path].py
+```
+
+### Test Naming
+- **Unit Tests**: `test_[function]_[scenario]_[expected]`
+- **Integration Tests**: `test_integration_[component]_[interaction]`
+- **System Tests**: `test_system_[feature]_[scenario]`
+- **E2E Tests**: `test_e2e_[workflow]_[scenario]`
+
+## Quality Assurance
+
+### Test Coverage
+- **Code Coverage**: Measure code coverage
+- **Scenario Coverage**: Cover all user scenarios
+- **Edge Case Coverage**: Test boundary conditions
+- **Error Case Coverage**: Test error conditions
+- **Integration Coverage**: Test all integrations
+
+### Test Quality
+- **Test Reliability**: Tests produce consistent results
+- **Test Maintainability**: Tests are easy to maintain
+- **Test Readability**: Tests are easy to understand
+- **Test Performance**: Tests run efficiently
+- **Test Evidence**: Tests provide clear evidence

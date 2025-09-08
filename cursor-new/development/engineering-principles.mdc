@@ -1,0 +1,477 @@
+---
+description: Software Engineering Principles
+globs: ["**/*.py", "**/*.js", "**/*.ts", "**/*.java", "**/*.go", "**/*.rs"]
+alwaysApply: false
+---
+
+# Software Engineering Principles
+
+## Purpose
+Apply proven software engineering principles to create maintainable, scalable, and robust code that follows industry best practices and supports long-term system evolution.
+
+## Core Engineering Principles
+
+### DRY (Don't Repeat Yourself)
+- **Definition**: Avoid duplication of code, data, or logic
+- **Implementation**:
+  - Extract common functionality into reusable functions/classes
+  - Use configuration files for repeated values
+  - Create shared libraries for common operations
+  - Implement inheritance and composition patterns
+- **Benefits**: Reduced maintenance, consistency, fewer bugs
+- **Examples**:
+  ```python
+  # Bad: Repeated validation logic
+  def validate_email(email):
+      return "@" in email and "." in email
+  
+  def validate_username(username):
+      return "@" in username and "." in username
+  
+  # Good: DRY approach
+  def validate_field(field, pattern):
+      return pattern in field
+  
+  def validate_email(email):
+      return validate_field(email, "@") and validate_field(email, ".")
+  ```
+
+### SOLID Principles
+
+#### Single Responsibility Principle (SRP)
+- **Definition**: A class should have only one reason to change
+- **Implementation**:
+  - Each class has one clear purpose
+  - Separate concerns into different classes
+  - Avoid god classes with multiple responsibilities
+- **Examples**:
+  ```python
+  # Bad: Multiple responsibilities
+  class UserManager:
+      def create_user(self, user_data):
+          # User creation logic
+      def send_email(self, user, message):
+          # Email sending logic
+      def log_activity(self, user, activity):
+          # Logging logic
+  
+  # Good: Single responsibility
+  class UserManager:
+      def create_user(self, user_data):
+          # Only user creation logic
+  
+  class EmailService:
+      def send_email(self, user, message):
+          # Only email logic
+  
+  class ActivityLogger:
+      def log_activity(self, user, activity):
+          # Only logging logic
+  ```
+
+#### Open/Closed Principle (OCP)
+- **Definition**: Software entities should be open for extension, but closed for modification
+- **Implementation**:
+  - Use interfaces and abstract classes
+  - Implement plugin architectures
+  - Use strategy and factory patterns
+- **Examples**:
+  ```python
+  # Good: Open for extension, closed for modification
+  from abc import ABC, abstractmethod
+  
+  class PaymentProcessor(ABC):
+      @abstractmethod
+      def process_payment(self, amount):
+          pass
+  
+  class CreditCardProcessor(PaymentProcessor):
+      def process_payment(self, amount):
+          # Credit card specific logic
+  
+  class PayPalProcessor(PaymentProcessor):
+      def process_payment(self, amount):
+          # PayPal specific logic
+  ```
+
+#### Liskov Substitution Principle (LSP)
+- **Definition**: Objects of a superclass should be replaceable with objects of a subclass
+- **Implementation**:
+  - Ensure derived classes don't change expected behavior
+  - Maintain contracts and interfaces
+  - Avoid breaking base class assumptions
+- **Examples**:
+  ```python
+  # Good: LSP compliant
+  class Bird:
+      def fly(self):
+          return "Flying"
+  
+  class Eagle(Bird):
+      def fly(self):
+          return "Eagle flying high"
+  
+  class Penguin(Bird):
+      def fly(self):
+          raise NotImplementedError("Penguins can't fly")
+  
+  # Better: LSP compliant with proper inheritance
+  class Bird:
+      def move(self):
+          return "Moving"
+  
+  class FlyingBird(Bird):
+      def fly(self):
+          return "Flying"
+  
+  class Eagle(FlyingBird):
+      def fly(self):
+          return "Eagle flying high"
+  
+  class Penguin(Bird):
+      def swim(self):
+          return "Swimming"
+  ```
+
+#### Interface Segregation Principle (ISP)
+- **Definition**: Clients should not be forced to depend on interfaces they do not use
+- **Implementation**:
+  - Create focused, specific interfaces
+  - Avoid fat interfaces with many methods
+  - Split large interfaces into smaller ones
+- **Examples**:
+  ```python
+  # Bad: Fat interface
+  class Worker:
+      def work(self):
+          pass
+      def eat(self):
+          pass
+      def sleep(self):
+          pass
+  
+  # Good: Segregated interfaces
+  class Workable:
+      def work(self):
+          pass
+  
+  class Eatable:
+      def eat(self):
+          pass
+  
+  class Sleepable:
+      def sleep(self):
+          pass
+  
+  class Human(Workable, Eatable, Sleepable):
+      pass
+  
+  class Robot(Workable):
+      pass
+  ```
+
+#### Dependency Inversion Principle (DIP)
+- **Definition**: High-level modules should not depend on low-level modules; both should depend on abstractions
+- **Implementation**:
+  - Depend on interfaces, not concrete implementations
+  - Use dependency injection
+  - Invert control flow
+- **Examples**:
+  ```python
+  # Bad: High-level depends on low-level
+  class EmailService:
+      def send_email(self, message):
+          # Direct email implementation
+  
+  class NotificationService:
+      def __init__(self):
+          self.email_service = EmailService()  # Direct dependency
+  
+  # Good: Both depend on abstraction
+  from abc import ABC, abstractmethod
+  
+  class MessageService(ABC):
+      @abstractmethod
+      def send_message(self, message):
+          pass
+  
+  class EmailService(MessageService):
+      def send_message(self, message):
+          # Email implementation
+  
+  class NotificationService:
+      def __init__(self, message_service: MessageService):
+          self.message_service = message_service  # Depends on abstraction
+  ```
+
+### KISS (Keep It Simple, Stupid)
+- **Definition**: Prefer simple solutions over complex ones
+- **Implementation**:
+  - Choose simple algorithms over complex ones
+  - Use clear, readable code
+  - Avoid unnecessary abstractions
+  - Prefer explicit over implicit
+- **Examples**:
+  ```python
+  # Bad: Overly complex
+  def process_data(data):
+      return [x for x in [y for y in data if y > 0] if x < 100]
+  
+  # Good: Simple and clear
+  def process_data(data):
+      positive_numbers = [x for x in data if x > 0]
+      filtered_numbers = [x for x in positive_numbers if x < 100]
+      return filtered_numbers
+  ```
+
+### YAGNI (You Aren't Gonna Need It)
+- **Definition**: Don't implement features until they are actually needed
+- **Implementation**:
+  - Focus on current requirements
+  - Avoid premature optimization
+  - Don't build for hypothetical future needs
+  - Refactor when requirements change
+- **Examples**:
+  ```python
+  # Bad: YAGNI violation
+  class User:
+      def __init__(self, name, email):
+          self.name = name
+          self.email = email
+          self.preferences = {}  # Not needed yet
+          self.analytics = {}    # Not needed yet
+          self.social_links = {} # Not needed yet
+  
+  # Good: YAGNI compliant
+  class User:
+      def __init__(self, name, email):
+          self.name = name
+          self.email = email
+          # Add other properties when actually needed
+  ```
+
+## Design Patterns
+
+### Creational Patterns
+- **Factory Pattern**: Create objects without specifying exact classes
+- **Builder Pattern**: Construct complex objects step by step
+- **Singleton Pattern**: Ensure only one instance exists (use sparingly)
+- **Prototype Pattern**: Create objects by cloning existing instances
+
+### Structural Patterns
+- **Adapter Pattern**: Make incompatible interfaces work together
+- **Decorator Pattern**: Add behavior to objects dynamically
+- **Facade Pattern**: Provide simplified interface to complex subsystem
+- **Proxy Pattern**: Provide placeholder for another object
+
+### Behavioral Patterns
+- **Observer Pattern**: Define one-to-many dependency between objects
+- **Strategy Pattern**: Define family of algorithms and make them interchangeable
+- **Command Pattern**: Encapsulate requests as objects
+- **Template Method**: Define algorithm skeleton in base class
+
+## Code Quality Principles
+
+### High Cohesion
+- **Definition**: Elements of a module work together for a single purpose
+- **Implementation**:
+  - Group related functionality together
+  - Minimize dependencies between modules
+  - Ensure modules have clear, focused responsibilities
+- **Examples**:
+  ```python
+  # Good: High cohesion
+  class UserValidator:
+      def validate_email(self, email):
+          # Email validation logic
+      def validate_password(self, password):
+          # Password validation logic
+      def validate_username(self, username):
+          # Username validation logic
+  ```
+
+### Low Coupling
+- **Definition**: Modules should have minimal dependencies on each other
+- **Implementation**:
+  - Use interfaces and abstractions
+  - Minimize direct dependencies
+  - Use dependency injection
+  - Avoid circular dependencies
+- **Examples**:
+  ```python
+  # Good: Low coupling
+  class OrderService:
+      def __init__(self, payment_processor, inventory_service):
+          self.payment_processor = payment_processor
+          self.inventory_service = inventory_service
+  
+      def process_order(self, order):
+          # Use injected dependencies
+          self.payment_processor.process_payment(order.total)
+          self.inventory_service.update_inventory(order.items)
+  ```
+
+### Abstraction
+- **Definition**: Hide complex implementation details and show only essential features
+- **Implementation**:
+  - Use abstract classes and interfaces
+  - Hide implementation details
+  - Provide simple, clear APIs
+  - Use encapsulation
+- **Examples**:
+  ```python
+  # Good: Proper abstraction
+  class DatabaseConnection:
+      def __init__(self, connection_string):
+          self._connection = self._establish_connection(connection_string)
+      
+      def execute_query(self, query):
+          # Hide complex database operations
+          return self._connection.execute(query)
+      
+      def _establish_connection(self, connection_string):
+          # Hide connection establishment details
+          pass
+  ```
+
+### Modularity
+- **Definition**: Divide system into independent, self-contained components
+- **Implementation**:
+  - Create focused, single-purpose modules
+  - Minimize inter-module dependencies
+  - Use clear module interfaces
+  - Enable independent development and testing
+- **Examples**:
+  ```python
+  # Good: Modular design
+  # user_module.py
+  class UserService:
+      def create_user(self, user_data):
+          pass
+  
+  # order_module.py
+  class OrderService:
+      def create_order(self, order_data):
+          pass
+  
+  # main.py
+  from user_module import UserService
+  from order_module import OrderService
+  ```
+
+## Code Organization
+
+### File Structure
+```
+project/
+├── src/
+│   ├── models/          # Data models
+│   ├── services/        # Business logic
+│   ├── controllers/     # API controllers
+│   ├── repositories/    # Data access
+│   ├── utils/          # Utility functions
+│   └── config/         # Configuration
+├── tests/
+│   ├── unit/           # Unit tests
+│   ├── integration/    # Integration tests
+│   └── e2e/           # End-to-end tests
+├── docs/              # Documentation
+└── requirements.txt   # Dependencies
+```
+
+### Import Organization
+```python
+# Standard library imports
+import os
+import sys
+from datetime import datetime
+
+# Third-party imports
+import requests
+import pandas as pd
+from flask import Flask
+
+# Local imports
+from models.user import User
+from services.user_service import UserService
+from utils.validators import validate_email
+```
+
+### Naming Conventions
+- **Classes**: PascalCase (e.g., `UserService`)
+- **Functions/Variables**: snake_case (e.g., `user_service`)
+- **Constants**: UPPER_SNAKE_CASE (e.g., `MAX_RETRY_COUNT`)
+- **Private members**: Leading underscore (e.g., `_private_method`)
+- **Files**: snake_case (e.g., `user_service.py`)
+
+## Error Handling
+
+### Exception Handling
+```python
+# Good: Specific exception handling
+try:
+    result = risky_operation()
+except SpecificException as e:
+    logger.error(f"Specific error occurred: {e}")
+    handle_specific_error(e)
+except GeneralException as e:
+    logger.error(f"General error occurred: {e}")
+    handle_general_error(e)
+finally:
+    cleanup_resources()
+```
+
+### Error Recovery
+```python
+# Good: Graceful error recovery
+def process_data(data):
+    try:
+        return process_data_safely(data)
+    except ValidationError:
+        return None  # Graceful degradation
+    except ProcessingError as e:
+        logger.error(f"Processing failed: {e}")
+        return fallback_result()
+```
+
+## Performance Considerations
+
+### Efficient Algorithms
+- Choose appropriate data structures
+- Use efficient algorithms (O(n) vs O(n²))
+- Avoid unnecessary computations
+- Cache expensive operations
+
+### Resource Management
+- Close resources properly
+- Use context managers
+- Avoid memory leaks
+- Monitor resource usage
+
+## Security Principles
+
+### Input Validation
+- Validate all inputs
+- Sanitize user data
+- Use parameterized queries
+- Implement proper authentication
+
+### Secure Coding
+- Follow OWASP guidelines
+- Use secure libraries
+- Implement proper authorization
+- Log security events
+
+## Testing Integration
+
+### Testable Code
+- Write testable functions
+- Use dependency injection
+- Avoid static dependencies
+- Separate business logic from framework code
+
+### Test Structure
+- Unit tests for individual functions
+- Integration tests for component interaction
+- End-to-end tests for complete workflows
+- Performance tests for critical paths

@@ -1,0 +1,59 @@
+---
+description: Master Rules
+globs: 
+alwaysApply: true
+---
+# Master Rule for Software Development
+
+- This is the master rule that guides development for the software
+- When working on specific tasks, refer to the appropriate specialized rules in `.cursor/rules/` for detailed guidance
+- Do not assume. Always clarify with the user. 
+- When replying, your reply must be sharp, concise and straight to the point. Do not beat around the bush!
+- When approaching problems, do think and analyze critically about how you should implement, plan well before you document it in story card.
+- Before ANY code changes, analyze existing code and dependencies
+- Always present options first and let users review. All options need to be reviewed before implementation.
+- Never change working code without explicit request
+- Test all changes incrementally before proceeding
+- If code breaks, revert immediately and analyze root cause
+- Do not hallucinate!
+- Before generating any code, verify understanding by showing evidence from existing codebase
+- Present at least 2-3 implementation approaches with pros/cons analysis
+- Require user confirmation before proceeding with any implementation
+- If uncertain about requirements or existing code, ask for clarification instead of making assumptions
+- Document all assumptions and verify them with user before proceeding
+- Use "Show me the code" approach - reference specific files/lines when making claims about existing functionality
+- Always research and provide web references when presenting solutions, especially for external libraries, APIs, or best practices
+- Include official documentation links, GitHub repositories, or authoritative sources for all technical recommendations
+- For Story Card Creation and Management, refer to `@story-card-structure.mdc` for templates, structure, and workflow
+- For Story Sizing and Estimation, refer to `@t-shirt-sizing.mdc` for T-shirt sizing framework and story points
+- For Development Workflow and Process, refer to `@development-workflow.mdc` for development steps and quality assurance
+- For MVP Principles and Engineering Guidelines, refer to `@mvp-principles.mdc` for MVP approach and anti-over-engineering
+- For Dependencies and Release Management, refer to `@dependencies-release-tracking.mdc` for dependencies and release notes
+- For Backlog Management, refer to `@backlog-management.mdc` for backlog structure and process
+- For Compliance and Quality Standards, refer to `@compliance-requirements.mdc` for mandatory requirements
+- For Testing Guidelines and Implementation, refer to `@testing.mdc` for complete testing framework and requirements
+- For Debugging and Troubleshooting, refer to `@debugging-troubleshooting.mdc` for comprehensive problem analysis and root cause identification
+- For Enhancement Planning and System Improvement, refer to `@enhancement-planning.mdc` for comprehensive analysis framework and methodology
+- For Documentation Guidelines and Maintenance, refer to `@documentation.mdc` for comprehensive documentation standards and requirements
+- For Product Owner Demonstration Requirements, refer to `@po-demo.mdc` for demonstration and review requirements
+- Always refer to the appropriate specialized rule for detailed templates, examples, and processes
+- Use `@story-card-structure.mdc` when creating new story cards
+- Use `@development-workflow.mdc` when starting development work
+- Use `@mvp-principles.mdc` when implementing features
+- Use `@dependencies-release-tracking.mdc` when creating releases
+- Use `@backlog-management.mdc` when managing feature backlog
+- Use `@compliance-requirements.mdc` when ensuring quality standards
+- Use `@t-shirt-sizing.mdc` when estimating story complexity and points
+- Use `@testing.mdc` when implementing and writing tests
+- Use `@debugging-troubleshooting.mdc` when analyzing and fixing issues
+- Use `@enhancement-planning.mdc` when planning system improvements and enhancements
+- Use `@documentation.mdc` when maintaining and updating project documentation
+- Use `@po-demo.mdc` when demonstrating implementations to Product Owner for approval
+- Use `@t-shirt-sizing.mdc` when estimating story complexity and points
+- Use `@testing.mdc` when implementing and writing tests
+- Use `@debugging-troubleshooting.mdc` when analyzing and fixing issues
+- Use `@enhancement-planning.mdc` when planning system improvements and enhancements
+- Use conda environment `[ENVIRONMENT_TO_BE_REPLACE]` to do python development. Ensure you are in the `platform` environment by running `conda env list` and make sure you are in the right environment before you start development.
+- All existing codes regardless of production codes and testing codes should not be modified without prior approval. 
+- Read the requirements.txt file for all the python libraries installed.
+- Read all the package.json for all the node libraries installed.

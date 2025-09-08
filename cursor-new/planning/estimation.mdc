@@ -1,0 +1,309 @@
+---
+description: Story Estimation and Sizing
+globs: ["stories/*.md"]
+alwaysApply: false
+---
+
+# Story Estimation and Sizing
+
+## Purpose
+Provide accurate, consistent story estimation using T-shirt sizing methodology to support sprint planning, resource allocation, and project timeline management.
+
+## T-Shirt Sizing Framework
+
+### Size Categories
+- **Extra Small (XS)**: 1 point - Simple tasks, 1-2 hours
+- **Small (S)**: 3 points - Basic features, 2-5 hours
+- **Medium (M)**: 5 points - Moderate complexity, 5-8 hours
+- **Medium High (MH)**: 8 points - Complex features, 8-12 hours
+- **Large (L)**: 13 points - High complexity, 1 day (MUST be broken down)
+- **Extra Large (XL)**: 21 points - Very complex, 2 days (MUST be broken down)
+
+### De-risking Rule
+**Any story larger than 8 points (MH) must be broken down into smaller stories to reduce risk and improve estimation accuracy.**
+
+### Size Guidelines
+
+#### Extra Small (XS) - 1 Point
+- **Duration**: 1-2 hours
+- **Examples**: 
+  - Adding form fields
+  - UI text changes
+  - Simple configuration updates
+  - Minor bug fixes
+  - Documentation updates
+- **Characteristics**: 
+  - No dependencies
+  - Clear requirements
+  - Low risk
+  - Minimal testing required
+
+#### Small (S) - 3 Points
+- **Duration**: 2-5 hours
+- **Examples**:
+  - Simple API endpoints
+  - Basic UI components
+  - Data validation rules
+  - Simple integrations
+  - Basic reporting features
+- **Characteristics**:
+  - Minimal dependencies
+  - Well-defined requirements
+  - Low to medium risk
+  - Standard testing required
+
+#### Medium (M) - 5 Points
+- **Duration**: 5-8 hours
+- **Examples**:
+  - Standard API endpoints
+  - Basic workflows
+  - Simple database changes
+  - Basic authentication features
+  - Data validation logic
+- **Characteristics**:
+  - Some dependencies
+  - Moderate complexity
+  - Medium risk
+  - Standard testing required
+
+#### Medium High (MH) - 8 Points
+- **Duration**: 8-12 hours
+- **Examples**:
+  - Complex integrations
+  - Advanced UI features
+  - Performance optimizations
+  - Security implementations
+  - Data migration scripts
+- **Characteristics**:
+  - Multiple dependencies
+  - High complexity
+  - Medium to high risk
+  - Extensive testing required
+- **Note**: This is the maximum size before de-risking is required
+
+#### Large (L) - 13 Points
+- **Duration**: 1 day
+- **Examples**:
+  - Major feature development
+  - Complex system integrations
+  - Architecture changes
+  - Multi-component features
+  - Performance-critical features
+- **Characteristics**:
+  - Many dependencies
+  - High complexity
+  - High risk
+  - Comprehensive testing and review
+- **Note**: Must be broken down into smaller stories (de-risking required)
+
+#### Extra Large (XL) - 21 Points
+- **Duration**: 2 days
+- **Examples**:
+  - Complete system modules
+  - Major architectural changes
+  - Complex third-party integrations
+  - Performance overhauls
+  - Security implementations
+- **Characteristics**:
+  - Extensive dependencies
+  - Very high complexity
+  - Very high risk
+  - Requires breaking down into smaller stories
+- **Note**: Must be broken down into smaller stories (de-risking required)
+
+## Estimation Process
+
+### 1. Story Analysis
+- **Requirements Review**: Understand all requirements and acceptance criteria
+- **Technical Analysis**: Assess technical complexity and implementation approach
+- **Dependency Identification**: Identify all internal and external dependencies
+- **Risk Assessment**: Evaluate potential risks and uncertainties
+- **Resource Requirements**: Consider required skills and resources
+
+### 2. Estimation Techniques
+
+#### Planning Poker
+- **Participants**: All team members involved in implementation
+- **Process**: 
+  1. Each member estimates privately
+  2. Reveal estimates simultaneously
+  3. Discuss differences
+  4. Re-estimate until consensus
+- **Benefits**: Team consensus, knowledge sharing, reduced bias
+
+#### T-Shirt Sizing
+- **Process**:
+  1. Compare story to reference stories
+  2. Assign appropriate size category
+  3. Validate against size guidelines
+  4. Document estimation rationale
+- **Benefits**: Simple, intuitive, consistent
+
+#### Story Point Mapping
+- **Reference Stories**: Use completed stories as reference points
+- **Comparison**: Compare new story to reference stories
+- **Adjustment**: Adjust for differences in complexity
+- **Validation**: Validate against team velocity
+
+### 3. Estimation Factors
+
+#### Complexity Factors
+- **Technical Complexity**: Algorithm complexity, system interactions
+- **Business Logic Complexity**: Complex business rules and workflows
+- **Integration Complexity**: External system integrations
+- **Data Complexity**: Complex data structures and transformations
+- **UI/UX Complexity**: Complex user interfaces and interactions
+
+#### Uncertainty Factors
+- **Requirements Uncertainty**: Unclear or changing requirements
+- **Technical Uncertainty**: Unproven technologies or approaches
+- **Integration Uncertainty**: Unknown external system behavior
+- **Performance Uncertainty**: Unknown performance characteristics
+- **Resource Uncertainty**: Unknown resource availability
+
+#### Dependency Factors
+- **External Dependencies**: Third-party services and systems
+- **Internal Dependencies**: Other team members or components
+- **Data Dependencies**: Required data sources or structures
+- **Infrastructure Dependencies**: Required infrastructure components
+- **Timeline Dependencies**: Sequential dependencies
+
+### 4. Estimation Validation
+
+#### Historical Data Analysis
+- **Velocity Tracking**: Compare to team's historical velocity
+- **Story Completion**: Analyze actual vs. estimated completion times
+- **Accuracy Assessment**: Identify estimation accuracy patterns
+- **Adjustment Factors**: Apply lessons learned from past estimates
+
+#### Team Consensus
+- **Discussion**: Discuss estimation rationale and assumptions
+- **Knowledge Sharing**: Share relevant experience and insights
+- **Risk Assessment**: Identify and discuss potential risks
+- **Consensus Building**: Reach team agreement on estimate
+
+#### Reference Validation
+- **Similar Stories**: Compare to similar completed stories
+- **Industry Benchmarks**: Compare to industry standards
+- **Expert Opinion**: Seek input from domain experts
+- **Reality Check**: Validate against common sense and experience
+
+## Estimation Guidelines
+
+### Best Practices
+- **Team Participation**: Include all team members in estimation
+- **Regular Practice**: Estimate regularly to improve accuracy
+- **Documentation**: Document estimation rationale and assumptions
+- **Review Process**: Regular review and adjustment of estimates
+- **Learning**: Learn from estimation accuracy and adjust approach
+
+### Common Pitfalls
+- **Optimism Bias**: Tendency to underestimate effort required
+- **Anchoring**: Being influenced by initial estimates
+- **Scope Creep**: Not accounting for additional requirements
+- **Dependency Ignorance**: Not considering all dependencies
+- **Risk Underestimation**: Not accounting for potential risks
+
+### Estimation Accuracy
+- **Target Accuracy**: Within 20% of actual effort
+- **Improvement Process**: Regular review and adjustment
+- **Learning Loop**: Capture lessons learned from each estimation
+- **Team Development**: Develop team estimation skills over time
+- **Process Refinement**: Continuously improve estimation process
+
+## Story Breakdown and De-risking
+
+### De-risking Rule
+**Any story larger than 8 points (Medium High) must be broken down into smaller stories to reduce risk and improve estimation accuracy.**
+
+### When to Break Down Stories
+- **Size Threshold**: Stories larger than 8 points (MH) must be broken down
+- **Complexity**: High complexity stories should be decomposed
+- **Dependencies**: Stories with many dependencies should be split
+- **Risk**: High-risk stories should be broken into smaller, manageable pieces
+- **Sprint Capacity**: Stories should fit within sprint capacity
+- **Estimation Uncertainty**: Stories with high estimation uncertainty should be split
+
+### Breakdown Techniques
+- **Feature Breakdown**: Split by feature or functionality
+- **Component Breakdown**: Split by system components
+- **Workflow Breakdown**: Split by user workflow steps
+- **Data Breakdown**: Split by data processing steps
+- **Integration Breakdown**: Split by integration points
+
+### Breakdown Guidelines
+- **Independence**: Each story should be independently deliverable
+- **Value**: Each story should provide user or business value
+- **Testability**: Each story should be testable
+- **Size**: Each story should be appropriately sized
+- **Clarity**: Each story should have clear requirements
+
+## Estimation Documentation
+
+### Estimation Record
+```
+Story ID: [Story identifier]
+Estimation Date: [Date of estimation]
+Estimated Size: [XS/S/M/MH/L/XL]
+Estimated Points: [1/3/8/8/13/21]
+Estimated Duration: [Hours/Days]
+Estimation Team: [Team members involved]
+Estimation Method: [Planning Poker/T-Shirt Sizing/etc.]
+Rationale: [Estimation reasoning]
+Assumptions: [Key assumptions made]
+Risks: [Identified risks]
+Dependencies: [Key dependencies]
+```
+
+### Estimation History
+- **Track Changes**: Document estimation changes and reasons
+- **Accuracy Analysis**: Analyze estimation accuracy over time
+- **Learning Capture**: Capture lessons learned from estimations
+- **Process Improvement**: Use data to improve estimation process
+- **Team Development**: Track team estimation skill development
+
+## Estimation Review Process
+
+### Review Criteria
+- **Size Appropriateness**: Story size is appropriate for team capacity
+- **Estimation Accuracy**: Estimate is realistic and well-justified
+- **Dependency Consideration**: All dependencies are considered
+- **Risk Assessment**: Risks are identified and considered
+- **Breakdown Necessity**: Story breakdown is appropriate
+
+### Review Participants
+- **Product Owner**: Business value and priority validation
+- **Development Team**: Technical feasibility and effort validation
+- **Scrum Master**: Process and methodology validation
+- **Stakeholders**: Business and technical stakeholder input
+
+### Review Process
+1. **Preparation**: Story author prepares estimation materials
+2. **Presentation**: Present story and estimation to review team
+3. **Discussion**: Discuss estimation rationale and assumptions
+4. **Validation**: Validate estimate against team capacity and experience
+5. **Adjustment**: Adjust estimate if necessary based on feedback
+6. **Approval**: Final approval and sign-off on estimate
+
+## Continuous Improvement
+
+### Estimation Metrics
+- **Accuracy**: Actual vs. estimated effort comparison
+- **Velocity**: Team velocity tracking and analysis
+- **Consistency**: Estimation consistency across team members
+- **Improvement**: Estimation accuracy improvement over time
+- **Process Efficiency**: Time spent on estimation vs. value delivered
+
+### Improvement Process
+- **Regular Review**: Regular review of estimation accuracy
+- **Root Cause Analysis**: Analyze causes of estimation inaccuracy
+- **Process Adjustment**: Adjust estimation process based on learnings
+- **Team Training**: Provide training to improve estimation skills
+- **Tool Enhancement**: Improve estimation tools and techniques
+
+### Learning Capture
+- **Retrospectives**: Capture estimation learnings in retrospectives
+- **Documentation**: Document estimation best practices and lessons learned
+- **Knowledge Sharing**: Share estimation insights across team
+- **Process Refinement**: Continuously refine estimation process
+- **Team Development**: Develop team estimation capabilities

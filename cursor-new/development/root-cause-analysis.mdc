@@ -1,0 +1,495 @@
+---
+description: Root Cause Analysis for Troubleshooting and Debugging
+globs: ["**/*.py", "**/*.js", "**/*.ts", "**/*.java", "**/*.go", "**/*.rs"]
+alwaysApply: false
+---
+
+# Root Cause Analysis for Troubleshooting and Debugging
+
+## Purpose
+Implement systematic root cause analysis for troubleshooting and debugging. For uncertainty and ambiguity, use the separate `@development/spike.mdc` process.
+
+## Root Cause Analysis Principles
+
+### Evidence-First Approach
+- **Gather Evidence**: Collect concrete evidence before proposing solutions
+- **Show Me the Code**: Reference specific files, functions, and line numbers
+- **Multiple Hypotheses**: Form multiple hypotheses and test each systematically
+- **Data-Driven**: Use data and metrics to support analysis
+- **Comprehensive Analysis**: Analyze all dependencies and interactions
+
+### Analysis Process
+1. **Problem Definition**: Clearly define the problem
+2. **Evidence Gathering**: Collect all relevant evidence
+3. **Hypothesis Formation**: Create multiple hypotheses
+4. **Hypothesis Testing**: Test each hypothesis systematically
+5. **Root Cause Identification**: Identify the actual root cause
+6. **Solution Design**: Design solutions based on root cause
+7. **Implementation**: Implement and test solutions
+8. **Verification**: Verify solution addresses root cause
+
+## Root Cause Analysis Framework
+
+### Problem Definition Template
+```
+Problem: [Clear description of the problem]
+Impact: [What is affected and how]
+Severity: [High/Medium/Low]
+Timeline: [When did it start, frequency]
+Environment: [Where does it occur]
+Reproduction: [Steps to reproduce]
+```
+
+### Evidence Gathering Checklist
+- [ ] Error messages and logs
+- [ ] System state at time of issue
+- [ ] Recent changes (code, configuration, environment)
+- [ ] User actions leading to issue
+- [ ] System resources (CPU, memory, disk, network)
+- [ ] External dependencies status
+- [ ] Database state and queries
+- [ ] Network connectivity and latency
+- [ ] Configuration settings
+- [ ] Performance metrics
+
+### Hypothesis Testing Template
+```
+Hypothesis: [Specific hypothesis about root cause]
+Evidence For: [Evidence supporting hypothesis]
+Evidence Against: [Evidence contradicting hypothesis]
+Test Plan: [How to test this hypothesis]
+Test Results: [Results of testing]
+Conclusion: [Accept or reject hypothesis]
+```
+
+## Root Cause Analysis Techniques
+
+### The 5 Whys
+```python
+def analyze_with_5_whys(problem):
+    """
+    Analyze problem using 5 Whys technique
+    
+    Evidence: Systematic root cause identification
+    """
+    why_chain = []
+    current_problem = problem
+    
+    for i in range(5):
+        why_chain.append({
+            'level': i + 1,
+            'problem': current_problem,
+            'why': f"Why {current_problem.lower()}?",
+            'answer': None  # To be filled during analysis
+        })
+        
+        # In real analysis, answer would be determined through investigation
+        # current_problem = determine_next_why(current_problem)
+    
+    return why_chain
+```
+
+### Fishbone Diagram (Ishikawa)
+```python
+def create_fishbone_analysis(problem):
+    """
+    Create fishbone diagram analysis
+    
+    Evidence: Comprehensive cause analysis across multiple dimensions
+    """
+    categories = {
+        'People': ['Skills', 'Training', 'Experience', 'Communication'],
+        'Process': ['Procedures', 'Workflow', 'Standards', 'Documentation'],
+        'Technology': ['Hardware', 'Software', 'Network', 'Tools'],
+        'Environment': ['Physical', 'Cultural', 'Organizational', 'External'],
+        'Materials': ['Data', 'Resources', 'Inputs', 'Outputs'],
+        'Methods': ['Approach', 'Technique', 'Strategy', 'Implementation']
+    }
+    
+    analysis = {}
+    for category, factors in categories.items():
+        analysis[category] = []
+        for factor in factors:
+            # In real analysis, investigate each factor
+            analysis[category].append({
+                'factor': factor,
+                'potential_causes': [],  # To be filled during analysis
+                'evidence': [],  # Evidence for/against
+                'likelihood': 'Unknown'  # High/Medium/Low/Unknown
+            })
+    
+    return analysis
+```
+
+### Fault Tree Analysis
+```python
+def create_fault_tree(problem):
+    """
+    Create fault tree analysis
+    
+    Evidence: Logical analysis of failure modes
+    """
+    fault_tree = {
+        'top_event': problem,
+        'immediate_causes': [],
+        'basic_events': [],
+        'intermediate_events': [],
+        'gates': {
+            'AND': [],  # All conditions must be true
+            'OR': [],   # Any condition can be true
+            'NOT': []   # Condition must be false
+        }
+    }
+    
+    # In real analysis, build tree through systematic investigation
+    return fault_tree
+```
+
+## Comprehensive Analysis Process
+
+### System Analysis
+```python
+def analyze_system_state():
+    """
+    Analyze complete system state
+    
+    Evidence: Comprehensive system understanding
+    """
+    analysis = {
+        'application_state': {
+            'processes': get_running_processes(),
+            'memory_usage': get_memory_usage(),
+            'cpu_usage': get_cpu_usage(),
+            'disk_usage': get_disk_usage(),
+            'network_connections': get_network_connections()
+        },
+        'database_state': {
+            'connections': get_db_connections(),
+            'queries': get_active_queries(),
+            'locks': get_db_locks(),
+            'performance': get_db_performance()
+        },
+        'external_services': {
+            'status': check_external_services(),
+            'response_times': get_response_times(),
+            'error_rates': get_error_rates()
+        },
+        'recent_changes': {
+            'code_changes': get_recent_commits(),
+            'config_changes': get_config_changes(),
+            'deployment_changes': get_deployment_history()
+        }
+    }
+    
+    return analysis
+```
+
+### Dependency Analysis
+```python
+def analyze_dependencies():
+    """
+    Analyze all system dependencies
+    
+    Evidence: Complete dependency mapping
+    """
+    dependencies = {
+        'internal_dependencies': {
+            'modules': get_module_dependencies(),
+            'services': get_service_dependencies(),
+            'data_flows': get_data_flow_dependencies()
+        },
+        'external_dependencies': {
+            'apis': get_external_api_dependencies(),
+            'databases': get_database_dependencies(),
+            'services': get_external_service_dependencies()
+        },
+        'infrastructure_dependencies': {
+            'servers': get_server_dependencies(),
+            'networks': get_network_dependencies(),
+            'storage': get_storage_dependencies()
+        }
+    }
+    
+    return dependencies
+```
+
+### Data Flow Analysis
+```python
+def analyze_data_flow():
+    """
+    Analyze data flow through system
+    
+    Evidence: Understanding of data transformation and flow
+    """
+    data_flow = {
+        'input_sources': get_input_sources(),
+        'processing_steps': get_processing_steps(),
+        'data_transformations': get_data_transformations(),
+        'output_destinations': get_output_destinations(),
+        'error_points': get_error_points(),
+        'validation_points': get_validation_points()
+    }
+    
+    return data_flow
+```
+
+## Integration with SPIKE Process
+
+### When to Use SPIKE vs Root Cause Analysis
+- **Use Root Cause Analysis**: When you have a specific problem to solve
+- **Use SPIKE Process**: When you have uncertainty or ambiguity about approach
+- **Integration**: SPIKE can be used to investigate root causes when the cause is unclear
+
+### SPIKE Integration
+For uncertainty and ambiguity in root cause analysis, refer to `@development/spike.mdc` for:
+- Investigating unclear root causes
+- Exploring multiple solution approaches
+- Time-boxed investigation of complex problems
+- Options analysis with pros/cons
+
+## Troubleshooting Process
+
+### Systematic Troubleshooting
+```python
+def troubleshoot_issue(problem_description):
+    """
+    Systematic troubleshooting process
+    
+    Evidence: Comprehensive problem resolution
+    """
+    troubleshooting_log = {
+        'problem': problem_description,
+        'start_time': datetime.now(),
+        'steps': [],
+        'evidence': [],
+        'hypotheses': [],
+        'tests': [],
+        'resolution': None
+    }
+    
+    # Step 1: Gather initial evidence
+    initial_evidence = gather_initial_evidence(problem_description)
+    troubleshooting_log['evidence'].append(initial_evidence)
+    
+    # Step 2: Form initial hypotheses
+    hypotheses = form_hypotheses(initial_evidence)
+    troubleshooting_log['hypotheses'] = hypotheses
+    
+    # Step 3: Test hypotheses
+    for hypothesis in hypotheses:
+        test_result = test_hypothesis(hypothesis)
+        troubleshooting_log['tests'].append(test_result)
+        
+        if test_result['confirmed']:
+            # Step 4: Implement solution
+            solution = implement_solution(hypothesis)
+            troubleshooting_log['resolution'] = solution
+            break
+    
+    troubleshooting_log['end_time'] = datetime.now()
+    troubleshooting_log['duration'] = troubleshooting_log['end_time'] - troubleshooting_log['start_time']
+    
+    return troubleshooting_log
+```
+
+### Evidence Collection
+```python
+def collect_evidence(problem):
+    """
+    Collect comprehensive evidence
+    
+    Evidence: Systematic evidence gathering
+    """
+    evidence = {
+        'logs': {
+            'application_logs': get_application_logs(),
+            'system_logs': get_system_logs(),
+            'error_logs': get_error_logs(),
+            'access_logs': get_access_logs()
+        },
+        'metrics': {
+            'performance_metrics': get_performance_metrics(),
+            'resource_metrics': get_resource_metrics(),
+            'business_metrics': get_business_metrics()
+        },
+        'state': {
+            'application_state': get_application_state(),
+            'database_state': get_database_state(),
+            'system_state': get_system_state()
+        },
+        'changes': {
+            'recent_changes': get_recent_changes(),
+            'deployment_history': get_deployment_history(),
+            'configuration_changes': get_configuration_changes()
+        }
+    }
+    
+    return evidence
+```
+
+## Solution Implementation
+
+### Solution Design
+```python
+def design_solution(root_cause, constraints):
+    """
+    Design solution based on root cause
+    
+    Evidence: Solution addresses actual root cause
+    """
+    solution = {
+        'root_cause': root_cause,
+        'constraints': constraints,
+        'options': [],
+        'recommended_option': None,
+        'implementation_plan': None
+    }
+    
+    # Generate solution options
+    options = generate_solution_options(root_cause, constraints)
+    solution['options'] = options
+    
+    # Evaluate options
+    for option in options:
+        option['evaluation'] = evaluate_option(option, constraints)
+    
+    # Select recommended option
+    solution['recommended_option'] = select_best_option(options)
+    
+    # Create implementation plan
+    solution['implementation_plan'] = create_implementation_plan(
+        solution['recommended_option']
+    )
+    
+    return solution
+```
+
+### Solution Validation
+```python
+def validate_solution(solution, original_problem):
+    """
+    Validate solution addresses root cause
+    
+    Evidence: Solution resolves original problem
+    """
+    validation = {
+        'solution': solution,
+        'original_problem': original_problem,
+        'validation_tests': [],
+        'results': [],
+        'success': False
+    }
+    
+    # Create validation tests
+    tests = create_validation_tests(solution, original_problem)
+    validation['validation_tests'] = tests
+    
+    # Execute validation tests
+    for test in tests:
+        result = execute_validation_test(test)
+        validation['results'].append(result)
+    
+    # Determine success
+    validation['success'] = all(result['passed'] for result in validation['results'])
+    
+    return validation
+```
+
+## Documentation and Learning
+
+### Root Cause Analysis Report
+```python
+def generate_rca_report(analysis):
+    """
+    Generate comprehensive RCA report
+    
+    Evidence: Documented analysis and resolution
+    """
+    report = {
+        'executive_summary': {
+            'problem': analysis['problem'],
+            'root_cause': analysis['root_cause'],
+            'solution': analysis['solution'],
+            'prevention': analysis['prevention_measures']
+        },
+        'detailed_analysis': {
+            'evidence': analysis['evidence'],
+            'hypotheses': analysis['hypotheses'],
+            'tests': analysis['tests'],
+            'conclusions': analysis['conclusions']
+        },
+        'solution_implementation': {
+            'solution': analysis['solution'],
+            'implementation': analysis['implementation'],
+            'validation': analysis['validation']
+        },
+        'prevention_measures': {
+            'immediate': analysis['immediate_prevention'],
+            'long_term': analysis['long_term_prevention'],
+            'monitoring': analysis['monitoring_improvements']
+        },
+        'lessons_learned': {
+            'what_went_well': analysis['what_went_well'],
+            'what_could_improve': analysis['what_could_improve'],
+            'recommendations': analysis['recommendations']
+        }
+    }
+    
+    return report
+```
+
+### Knowledge Sharing
+```python
+def share_learnings(analysis):
+    """
+    Share learnings with team
+    
+    Evidence: Knowledge transfer and prevention
+    """
+    sharing_activities = {
+        'team_presentation': {
+            'audience': 'Development Team',
+            'content': 'Root cause analysis findings',
+            'duration': '30 minutes',
+            'format': 'Presentation with Q&A'
+        },
+        'documentation_update': {
+            'runbooks': 'Update troubleshooting runbooks',
+            'procedures': 'Update standard procedures',
+            'monitoring': 'Update monitoring procedures'
+        },
+        'process_improvement': {
+            'prevention': 'Implement prevention measures',
+            'monitoring': 'Enhance monitoring and alerting',
+            'training': 'Provide team training'
+        }
+    }
+    
+    return sharing_activities
+```
+
+## Quality Gates
+
+### Analysis Quality Checklist
+- [ ] Problem clearly defined
+- [ ] Evidence comprehensively gathered
+- [ ] Multiple hypotheses formed and tested
+- [ ] Root cause identified with evidence
+- [ ] Solution addresses root cause
+- [ ] Solution validated and tested
+- [ ] Prevention measures implemented
+- [ ] Learnings documented and shared
+- [ ] Process improvements identified
+- [ ] Team knowledge updated
+
+### SPIKE Quality Checklist
+- [ ] Investigation questions clearly defined
+- [ ] Time-boxed investigation conducted
+- [ ] Multiple options generated
+- [ ] Pros/cons analysis completed
+- [ ] Risks assessed for each option
+- [ ] Recommendation provided with rationale
+- [ ] Product Owner decision obtained
+- [ ] Implementation plan created
+- [ ] Learnings documented
+- [ ] Knowledge shared with team

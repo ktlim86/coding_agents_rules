@@ -1,0 +1,221 @@
+---
+description: Root Cause Analysis and Evidence-First Troubleshooting (Cross-Phase)
+globs: ["**/*.py", "**/*.js", "**/*.ts", "**/*.java", "**/*.go", "**/*.rs"]
+alwaysApply: false
+---
+
+# Root Cause Analysis and Evidence-First Troubleshooting
+
+## Purpose
+Unified, cross-phase protocol for diagnosing and fixing issues across development, integration-testing, release-deployment, and bug finding. Integrates rigorous root cause analysis with evidence-first troubleshooting to avoid assumptions and ensure safe, incremental change.
+
+## Principles
+
+### Evidence-First
+- Create diagnostic scripts before proposing fixes
+- Observe real data and runtime behavior (no assumptions)
+- Verify schemas, types, and values from actual sources (APIs/DB/files)
+- Build minimal, deterministic reproductions
+
+### Root-Cause Focus
+- Separate symptoms from causes
+- Map dependencies and execution/data flows end-to-end
+- Pinpoint exact failure location (file/function/line)
+- Confirm root cause with concrete evidence before fixes
+
+### Safe, Incremental Change
+- Hypothesize → test → collect evidence → iterate
+- One change at a time; validate after each step
+- Maintain rollback plan and regression checks
+
+## Analysis Process
+
+1) Problem Definition
+- Clarify problem, impact, severity, timeline, environment, reproduction steps
+
+2) Evidence Gathering
+- Errors/logs, system state, recent code/config/deploy changes
+- Resource metrics (CPU, memory, disk, network)
+- External dependency status and DB queries/state
+
+3) Hypotheses and Tests
+- Form multiple hypotheses with rationale
+- Design quick, decisive diagnostics for each
+- Collect evidence, accept or reject systematically
+
+4) Root Cause Identification
+- Identify true cause supported by evidence
+- Document dependency/data/execution path involved
+
+5) Solution Design and Implementation
+- Choose least risky, highest-confidence approach
+- Implement behind flags if appropriate, add targeted logs
+- Validate with tests and monitoring
+
+6) Verification and Closure
+- Verify fix resolves original problem without regressions
+- Document findings, prevention, and improvements
+
+## Templates
+
+### Problem Definition
+```
+Problem: [Clear description]
+Impact: [Affected components/users]
+Severity: [High/Medium/Low]
+Timeline: [Start, frequency]
+Environment: [Dev/Staging/Prod]
+Reproduction: [Minimal steps]
+```
+
+### Hypothesis Testing
+```
+Hypothesis: [Specific, testable]
+Evidence For: [...]
+Evidence Against: [...]
+Test Plan: [...]
+Test Results: [...]
+Conclusion: [Accept/Reject]
+```
+
+## Techniques
+
+- 5 Whys, Fishbone (Ishikawa), and Fault Tree analyses
+- System snapshot: processes, memory, CPU, disk, network, DB
+- Dependency mapping: modules/services/APIs/DB/infra
+- Data flow tracing: inputs → transformations → outputs; validation/error points
+- Error propagation mapping and state lifecycle analysis
+- Concurrency/timing: async, retries, backoff, locks, races
+- Resource checks: file handles, sockets, DB connections
+- Configuration and env var verification; feature flags
+- Environment diffs: dev vs staging vs prod
+- Profiling: CPU/memory/I/O when performance is involved
+
+## Diagnostics (Evidence-First)
+
+### API Response Schema Probe
+```python
+import json
+
+async def dump_api_schema(client, symbol: str):
+    data = await client.get_balance_sheet(symbol, period="annual", limit=1)
+    record = data[0] if data else {}
+    print("All fields in the record:")
+    for key, value in record.items():
+        print(f"  {key}: {type(value).__name__} = {value}")
+    print(json.dumps(record, indent=2, default=str))
+```
+
+### Data Shape Assertion at Boundary
+```python
+def assert_expected_fields(payload: dict, expected: set[str]):
+    missing = expected - set(payload)
+    unexpected = set(payload) - expected
+    return {"missing": sorted(missing), "unexpected": sorted(unexpected)}
+```
+
+### Timing Probe
+```python
+import time
+
+def with_timing(fn):
+    def wrapper(*args, **kwargs):
+        t0 = time.perf_counter()
+        result = fn(*args, **kwargs)
+        t1 = time.perf_counter()
+        print({"fn": fn.__name__, "ms": round((t1 - t0) * 1000, 2)})
+        return result
+    return wrapper
+```
+
+## Troubleshooting Workflow (Systematic)
+
+1) Establish Facts → 2) Reproduce/Observe → 3) Trace Top-Down and Bottom-Up → 4) Validate Assumptions via Diagnostics → 5) Test Hypotheses → 6) Implement Safely → 7) Document and Close
+
+Do
+- Reference specific files/functions/lines
+- Provide multiple solution options with trade-offs
+- Include authoritative references for external techniques
+- Keep changes minimal, reversible, and tested
+
+Don’t
+- Assume schemas/defaults/behavior without checking
+- Make broad changes without reproduction/evidence
+- Conflate symptoms with causes
+- Proceed without rollback plan
+
+## Solution Implementation and Validation
+
+### Design Options and Plan
+```python
+def design_solution(root_cause, constraints):
+    solution = {
+        'root_cause': root_cause,
+        'constraints': constraints,
+        'options': [],
+        'recommended_option': None,
+        'implementation_plan': None
+    }
+    options = generate_solution_options(root_cause, constraints)
+    solution['options'] = options
+    for option in options:
+        option['evaluation'] = evaluate_option(option, constraints)
+    solution['recommended_option'] = select_best_option(options)
+    solution['implementation_plan'] = create_implementation_plan(solution['recommended_option'])
+    return solution
+```
+
+### Validate Fix
+```python
+def validate_solution(solution, original_problem):
+    tests = create_validation_tests(solution, original_problem)
+    results = [execute_validation_test(t) for t in tests]
+    return all(r['passed'] for r in results)
+```
+
+## Risk and Rollback
+- Define blast radius and success/failure signals
+- Prepare revert steps (flag, revert PR, rollback script)
+- Execute in safe window with monitoring/on-call coverage
+
+## Regression and Verification
+- Extend tests to lock in the fix
+- Re-run critical integrations in target environment
+- Confirm logs/metrics/errors return to baseline
+
+## Reporting and Knowledge Sharing
+```python
+def generate_rca_report(analysis):
+    return {
+        'executive_summary': {
+            'problem': analysis['problem'],
+            'root_cause': analysis['root_cause'],
+            'solution': analysis['solution'],
+            'prevention': analysis['prevention_measures']
+        },
+        'detailed_analysis': {
+            'evidence': analysis['evidence'],
+            'hypotheses': analysis['hypotheses'],
+            'tests': analysis['tests'],
+            'conclusions': analysis['conclusions']
+        }
+    }
+```
+
+## Quality Gates
+- Problem clearly defined; evidence comprehensive
+- Multiple hypotheses tested; root cause evidenced
+- Fix addresses cause; validated; prevention identified
+- Learnings documented and shared
+
+## Related Rules
+- SPIKE process: `@development/spike.mdc`
+- Evidence-based testing: `@integration-testing/evidence-based-testing.mdc`
+- Story card and acceptance: `@planning/story-card-creation.mdc`
+- Date/time commands: `@date-commands.mdc`
+
+## Authoritative References
+- Python logging: `https://docs.python.org/3/library/logging.html`
+- Python asyncio: `https://docs.python.org/3/library/asyncio.html`
+- Python profiling: `https://docs.python.org/3/library/profile.html`
+

@@ -1,0 +1,17 @@
+---
+description: Backlog Management
+globs: ["backlogs/*.md"]
+alwaysApply: false
+---
+- Document new features in `backlogs/` folder using `backlog_01.md`, `backlog_02.md` format
+- Include backlog name, description, proposed features, business value, and technical considerations
+- Specify priority level (High/Medium/Low) for each feature
+- Link to related tasks or story cards in reference section
+- Track status: Proposed/Under Review/Approved/Rejected with dates and reviewers
+- Review backlog items monthly and assess business value and technical feasibility
+- Convert approved backlog items to story cards for development
+- Include approved stories in sprint planning
+- Keep backlog status current and maintain chronological order
+- Backlog contains high-level feature ideas, story cards contain detailed development tasks
+- Follow backlog management process: suggestion → review → creation → documentation → linking
+- Maintain backlog organization with clear file naming and structure
