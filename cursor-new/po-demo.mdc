@@ -1,6 +1,6 @@
 ---
 description: Product Owner Demonstration Requirements
-globs: ["demo/**/*", "stories/*.md"]
+globs: ["demo/**/*demo*", "demo/*demo*", "stories/*.md"]
 alwaysApply: false
 ---
 
@@ -63,6 +63,15 @@ demo/
 │   └── screenshots/
 └── ...
 ```
+
+### Demo File Naming Conventions
+- **Demo Scripts**: Must start with `demo_` prefix (e.g., `demo_financial_pipeline.py`)
+- **Test Files**: Must start with `test_` prefix and be in `tests/` folder
+- **Demo Folders**: Must follow `story_[ID]_[title]/` pattern
+- **Main Demo Script**: Always named `demo.py` within story folder
+- **Standalone Demos**: Use `demo_[feature_name].py` pattern
+- **NO MIXING**: Demo files must NOT contain "test" in filename
+- **CLEAR SEPARATION**: Easy differentiation between demo and test files
 
 ### Demo Script Template
 ```python

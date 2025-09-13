@@ -1,0 +1,286 @@
+---
+description: Development Process with Mandatory PO Approval Gates
+globs: ["**/*.py", "**/*.js", "**/*.ts", "**/*.md"]
+alwaysApply: false
+---
+
+# Development Process with Mandatory PO Approval Gates
+
+## Purpose
+Establish a comprehensive development process with mandatory Product Owner approval gates to ensure proper governance, prevent unauthorized development, and maintain alignment with business objectives.
+
+## MANDATORY DEVELOPMENT GATES
+
+### Gate 1: Story Card Approval Gate
+**Purpose**: Ensure story card is approved before any development and testing
+**Trigger**: After creating any story card
+**Required Actions**:
+1. Present complete story card to Product Owner
+2. Explain user story, acceptance criteria, and estimation
+3. Present implementation approach with pros/cons analysis
+4. Present development plan and timeline
+5. Present testing strategy and test cases
+6. Ask: "Product Owner, do you approve this story card and want me to proceed with development and testing?"
+7. **WAIT for explicit approval**
+8. Document approval in story card
+9. **THEN proceed with development and testing**
+
+**Approval Criteria**:
+- [ ] Story card is complete and accurate
+- [ ] User story follows proper format
+- [ ] Acceptance criteria are testable
+- [ ] Test cases are comprehensive
+- [ ] Implementation approach is clearly defined with pros/cons
+- [ ] Development plan and timeline are realistic
+- [ ] Testing strategy is comprehensive
+- [ ] Estimation is reasonable
+- [ ] Dependencies are identified
+- [ ] Product Owner explicitly approves
+
+### Gate 2: Testing Evidence Acceptance Gate
+**Purpose**: Ensure testing evidence is accepted before deployment
+**Trigger**: After development and testing are completed
+**Required Actions**:
+1. Complete development and testing
+2. Gather evidence-based testing results
+3. Reference `@integration-testing/evidence-based-testing.mdc`
+4. Present test results, screenshots, and validation evidence
+5. Demonstrate all acceptance criteria are met
+6. Ask: "Product Owner, do you accept this testing evidence and approve the completed work?"
+7. **WAIT for explicit acceptance**
+8. Document acceptance in story card
+9. **THEN proceed to deployment planning**
+
+**Approval Criteria**:
+- [ ] All acceptance criteria are met
+- [ ] Evidence-based testing is completed
+- [ ] Test results are presented with evidence
+- [ ] Screenshots/validation evidence is provided
+- [ ] All test cases pass
+- [ ] No critical bugs exist
+- [ ] Product Owner explicitly accepts testing evidence
+
+### Gate 3: Deployment Approval Gate
+**Purpose**: Ensure deployment approach is approved before any production changes
+**Trigger**: Before any deployment or production changes
+**Required Actions**:
+1. Develop deployment plan and rollback strategy
+2. Present risks and mitigation measures
+3. Ask: "Product Owner, do you approve this deployment?"
+4. **WAIT for explicit approval**
+5. Document approval in story card
+6. **THEN proceed with deployment**
+
+**Approval Criteria**:
+- [ ] Deployment plan is comprehensive
+- [ ] Rollback strategy is defined
+- [ ] Risks are identified and mitigated
+- [ ] Monitoring and alerting are in place
+- [ ] Success criteria are defined
+- [ ] Communication plan is established
+- [ ] Product Owner explicitly approves
+
+## MANDATORY DEVELOPMENT SEQUENCE
+
+### Phase 1: Gate 1 - Story Card Approval
+```
+1. Create story card using enhanced template
+2. Fill in all required sections
+3. Develop implementation approach with pros/cons
+4. Create development plan and timeline
+5. Define testing strategy and test cases
+6. Present complete package to Product Owner
+7. WAIT for explicit approval
+8. Document approval in story card
+9. THEN proceed with development and testing
+```
+
+### Phase 2: Development and Testing Execution
+```
+1. Follow approved implementation approach
+2. Implement all acceptance criteria
+3. Execute comprehensive testing
+4. Gather evidence-based testing results
+5. Document key decisions and challenges
+6. Report progress regularly to Product Owner
+7. Request approval for any changes
+8. Prepare testing evidence for Gate 2
+```
+
+### Phase 3: Gate 2 - Testing Evidence Acceptance
+```
+1. Complete development and testing
+2. Gather evidence-based testing results
+3. Reference @integration-testing/evidence-based-testing.mdc
+4. Present test results, screenshots, and validation evidence
+5. Demonstrate all acceptance criteria are met
+6. WAIT for explicit acceptance
+7. Document acceptance in story card
+8. THEN proceed to deployment planning
+```
+
+### Phase 4: Gate 3 - Deployment Approval
+```
+1. Develop deployment plan and rollback strategy
+2. Present deployment approach to Product Owner
+3. WAIT for explicit approval
+4. Document approval in story card
+5. THEN proceed with deployment
+6. Monitor and validate deployment
+```
+
+## STOP AND ASK TRIGGERS
+
+### Mandatory Stop Points
+**STOP and ask for approval before**:
+- Writing any code
+- Creating any files
+- Implementing any solution
+- Making any technical decisions
+- Changing scope or approach
+- Adding new features
+- Modifying existing functionality
+- Creating documentation
+- Running any scripts or commands
+- Making any system changes
+
+### Uncertainty Triggers
+**STOP and ask for clarification when**:
+- Requirements are unclear
+- Technical approach is uncertain
+- Scope is ambiguous
+- Dependencies are unclear
+- Risks are identified
+- Assumptions are made
+- Changes are needed
+
+### Change Triggers
+**STOP and ask for approval when**:
+- Scope changes
+- Approach changes
+- Timeline changes
+- Resource requirements change
+- Dependencies change
+- Risks change
+- Any deviation from approved plan
+
+## APPROVAL REQUEST FORMAT
+
+### Standard Approval Request
+```
+APPROVAL REQUEST
+================
+Story ID: [Story identifier]
+Request Type: [Gate 1: Story Card / Gate 2: Testing Evidence / Gate 3: Deployment]
+Request Date: [YYYY-MM-DD HH:MM:SS]
+
+What I'm Requesting Approval For:
+[Clear description of what needs approval]
+
+For Gate 1 (Story Card):
+- User Story: [Complete user story]
+- Acceptance Criteria: [List all acceptance criteria]
+- Implementation Approach: [Detailed explanation with pros/cons]
+- Development Plan: [Step-by-step development plan]
+- Testing Strategy: [Testing approach and test cases]
+
+For Gate 2 (Testing Evidence):
+- Evidence Reference: [Reference to @integration-testing/evidence-based-testing.mdc]
+- Test Results: [Summary of test results and evidence]
+- Screenshots/Validation: [Evidence of functionality]
+- Acceptance Criteria Met: [Confirmation all criteria are met]
+
+For Gate 3 (Deployment):
+- Deployment Plan: [Deployment approach and timeline]
+- Rollback Strategy: [Rollback plan and procedures]
+- Risks and Mitigation: [Identified risks and mitigation strategies]
+
+Dependencies:
+[Any dependencies or constraints]
+
+Questions for Product Owner:
+[Any questions or clarifications needed]
+
+Explicit Approval Required:
+Product Owner, do you approve this [request type] and want me to proceed?
+
+[ ] APPROVED - Product Owner signature and date
+[ ] REJECTED - Reason and next steps
+[ ] PENDING - Additional information needed
+```
+
+## DEVELOPMENT QUALITY STANDARDS
+
+### Code Quality
+- Follow approved implementation approach
+- Implement all acceptance criteria
+- Write clean, maintainable code
+- Follow engineering principles (DRY, SOLID, KISS, YAGNI)
+- Document key decisions and rationale
+- Ensure proper error handling
+
+### Testing Quality
+- Implement comprehensive test cases
+- Cover all acceptance criteria
+- Use evidence-based testing approach
+- Provide clear evidence of functionality
+- Validate external services with actual connectivity tests
+- No mock data unless absolutely necessary
+
+### Documentation Quality
+- Document all key decisions
+- Maintain up-to-date documentation
+- Provide clear implementation notes
+- Document any challenges or discoveries
+- Maintain audit trail of all changes
+- Ensure documentation is accessible
+
+## VIOLATION PREVENTION
+
+### Mandatory Compliance Checks
+**Before any action, verify**:
+1. Do I have the required PO approval?
+2. Have I documented the approval?
+3. Am I following the approved approach?
+4. Do I need to ask for approval for any changes?
+5. Am I maintaining proper documentation?
+
+### Warning Signs
+**STOP immediately if**:
+- You're about to write code without approval
+- You're making assumptions about requirements
+- You're proceeding without explicit confirmation
+- You're changing the approved approach
+- You're adding features not in the story card
+- You're not following the approved timeline
+
+### Compliance Monitoring
+- Track approval compliance for all development activities
+- Monitor adherence to development process
+- Identify and address any violations
+- Provide feedback on process effectiveness
+- Continuously improve development process
+
+## INTEGRATION WITH OTHER RULES
+
+### Story Card Integration
+- Align development gates with story card approval gates
+- Ensure development follows approved story card
+- Maintain consistency between story card and development
+- Track development progress against story card
+
+### Testing Integration
+- Gate 2 references `@integration-testing/evidence-based-testing.mdc`
+- Present evidence-based testing results for Gate 2 acceptance
+- Document testing evidence acceptance
+- Ensure testing follows evidence-based methodology
+
+### Deployment Integration
+- Align deployment gates with development gates
+- Ensure deployment follows approved plan
+- Maintain consistency between deployment and development
+- Track deployment progress against development
+
+---
+
+**CRITICAL REMINDER**: This development process is MANDATORY and must be followed for ALL development activities. All approval gates must be completed and all approvals must be documented. There are NO EXCEPTIONS to the approval requirements.

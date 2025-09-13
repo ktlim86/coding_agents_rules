@@ -58,6 +58,13 @@ This master rule guides the complete agile software development lifecycle with 7
 - **Demo Code**: Create executable demo code in `demo/` folder with story card references
 - **Demo Process**: Working demo code with clear story card references for PO review
 
+### File Organization Standards
+- **Tests**: All test files MUST be placed in `tests/` folder
+- **Demo Code**: Demo and migration scripts go in `demo/` folder
+- **SPIKE Files**: Proof of concept files go in `spike/` folder
+- **Core Implementation**: Main code goes in appropriate `trigger/` or `api_platform/` folders
+- **Story Cards**: Story cards go in `stories/` folder
+
 ### MVP Principles
 - Focus on core functionality first
 - Avoid over-engineering
@@ -97,16 +104,31 @@ This master rule guides the complete agile software development lifecycle with 7
 3. Refer to appropriate phase-specific rules before starting tasks
 
 ### Story Card Development
-1. Use `@planning/story-card-creation.mdc` for story structure
-2. Include start/end datetime (Singapore time) and duration
-3. Map test cases to acceptance criteria
-4. Require Product Owner approval before development
+1. **MANDATORY**: Use `@planning/story-card-creation.mdc` for all story cards
+2. **MANDATORY**: Complete all approval sections in the template
+3. Include start/end datetime (Singapore time) and duration using `@date-commands.mdc`
+4. Map test cases to acceptance criteria
+5. **MANDATORY**: Require Product Owner approval before development
+6. **MANDATORY**: Document all approvals with timestamps
+7. **DO NOT proceed without explicit approval**
 
 ### Development Process
-1. Refer to `@development/coding-standards.mdc` before coding
-2. Follow TDD approach (tests first, then implementation)
-3. Present implementation options with pros/cons
-4. Get Product Owner confirmation before proceeding
+1. **MANDATORY**: Follow `@development/development-process.mdc` for all development activities
+2. **MANDATORY**: Use `@planning/story-card-creation.mdc` for all story cards
+3. **MANDATORY**: Complete all approval gates in `@development/development-process.mdc`
+4. **MANDATORY**: Complete the pre-development checklist in `@development/engineering-principles.mdc` before writing ANY code
+5. Follow TDD approach (tests first, then implementation)
+6. Present implementation options with pros/cons
+7. **WAIT for explicit Product Owner confirmation before proceeding**
+
+### MANDATORY PRE-DEVELOPMENT CHECKLIST
+**CRITICAL**: Before writing ANY code, you MUST complete the checklist in `@development/engineering-principles.mdc`:
+- DRY Check: Enhance existing code instead of creating duplicates
+- SOLID Check: Follow single responsibility and open/closed principles
+- KISS Check: Use the simplest solution that works
+- YAGNI Check: Build only what's needed now
+- Refactoring First: Consider enhancing existing code before creating new files
+- File Creation: Only create new files if absolutely necessary
 
 ### Testing Process
 1. Use `@integration-testing/evidence-based-testing.mdc` for test strategy
@@ -124,8 +146,9 @@ This master rule guides the complete agile software development lifecycle with 7
 ## Key Rules References
 
 ### Essential Rules for All Phases
-- `@planning/story-card-creation.mdc` - Story card structure and acceptance criteria
-- `@development/engineering-principles.mdc` - Software engineering best practices
+- `@planning/story-card-creation.mdc` - **MANDATORY** story card template with approval sections
+- `@development/development-process.mdc` - **MANDATORY** development process with approval gates
+- `@development/engineering-principles.mdc` - **MANDATORY** software engineering principles with pre-development checklist
 - `@integration-testing/evidence-based-testing.mdc` - Testing strategy and evidence requirements
 - `@root-cause-analysis.mdc` - Troubleshooting and debugging approach
 - `@development/spike.mdc` - SPIKE process for uncertainty and ambiguity
@@ -146,6 +169,13 @@ This master rule guides the complete agile software development lifecycle with 7
 - No assumptions without confirmation
 - Regular status updates and demonstrations
 
+### MANDATORY APPROVAL PROCESS
+- **Reference**: See `@development/development-process.mdc` for mandatory approval gates
+- **Story Cards**: Use `@planning/story-card-creation.mdc` for approval documentation
+- **Development**: Use `@development/development-process.mdc` for development gates
+- **NO EXCEPTIONS**: All approval gates must be followed
+- **STOP AND ASK**: Before any development action, ask for approval
+
 ## Self-Reflection Requirements
 - Review actions on every story card
 - Identify what was done well, what can be improved, what was not done well
@@ -153,7 +183,12 @@ This master rule guides the complete agile software development lifecycle with 7
 - Address any issues that may have upset the Product Owner
 
 ## Environment Setup
-- Use conda environment `[ENVIRONMENT_TO_BE_REPLACE]` for Python development
+- Use conda environment `[CONDA_ENVIRONMENT]` for Python development by running `conda activate [CONDA_ENVIRONMENT]` 
 - Verify environment before starting development
 - Read requirements.txt and package.json for dependencies
 - Never modify working code without explicit approval
+ 
+### Mandatory Pre-Run Checklist
+- Run: `source $(conda info --base)/etc/profile.d/conda.sh && conda activate [CONDA_ENVIRONMENT]`
+- Verify: `python --version` and `which python` show the `[CONDA_ENVIRONMENT]` environment
+- If running scripts via automation, ensure activation is included in the runner command or shell script

@@ -212,6 +212,12 @@ tests/
     └── test_[critical_path].py
 ```
 
+**MANDATORY FILE PLACEMENT RULES:**
+- ✅ **Tests**: ALL test files MUST be placed in `tests/` folder
+- ❌ **Demo Folder**: NEVER place test files in `demo/` folder
+- ❌ **SPIKE Folder**: NEVER place test files in `spike/` folder
+- ❌ **Other Folders**: NEVER place test files in any other folder
+
 ### Test Naming
 - **Unit Tests**: `test_[function]_[scenario]_[expected]`
 - **Integration Tests**: `test_integration_[component]_[interaction]`
@@ -232,4 +238,23 @@ tests/
 - **Test Maintainability**: Tests are easy to maintain
 - **Test Readability**: Tests are easy to understand
 - **Test Performance**: Tests run efficiently
+
+## Common Mistakes to Avoid
+
+### File Placement Violations
+- ❌ **WRONG**: Placing test files in `demo/` folder
+- ❌ **WRONG**: Placing test files in `spike/` folder
+- ❌ **WRONG**: Placing test files in any folder other than `tests/`
+- ✅ **CORRECT**: ALL test files go in `tests/` folder
+
+### Test File Naming Violations
+- ❌ **WRONG**: `demo/test_integration.py`
+- ❌ **WRONG**: `spike/test_poc.py`
+- ✅ **CORRECT**: `tests/integration/test_integration.py`
+- ✅ **CORRECT**: `tests/unit/test_poc.py`
+
+### Folder Structure Violations
+- ❌ **WRONG**: Creating test files outside `tests/` folder
+- ❌ **WRONG**: Mixing test files with demo or spike files
+- ✅ **CORRECT**: Organizing tests in `tests/` subfolders by type
 - **Test Evidence**: Tests provide clear evidence

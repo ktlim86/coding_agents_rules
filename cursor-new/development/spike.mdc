@@ -11,12 +11,22 @@ Time-boxed proof of concept to investigate uncertainty, ambiguity, or technical 
 
 ## When to Use SPIKE
 
+### MANDATORY SPIKE TRIGGERS
+**STOP and create SPIKE when you encounter**:
+- **Proof of Concept**: Any "POC", "proof of concept", or "prototype" work
+- **Technical Uncertainty**: Unknown implementation approach
+- **Unproven Technology**: New technology or framework evaluation
+- **Complex Decisions**: Architectural or design decisions
+- **Integration Unknowns**: Unknown external service behavior
+- **Performance Concerns**: Scalability or performance investigation
+
 ### Development SPIKE
 - Technical uncertainty about implementation approach
 - Unknown external service behavior or integration
 - Unproven technology or framework evaluation
 - Complex architectural decisions
 - Performance or scalability concerns
+- **ANY proof of concept or prototype work**
 
 ### Troubleshooting SPIKE
 - Root cause investigation for complex issues
@@ -94,9 +104,13 @@ spike/
 └── ...
 ```
 
-### Naming Convention
+### MANDATORY Naming Convention
 - **Documentation**: `spike_[ID]_[title].md`
 - **Code**: `spike_[ID]_[description].[ext]`
+- **CRITICAL**: NEVER use `test_*` prefix for SPIKE files
+- **CRITICAL**: NEVER use `demo/` directory for SPIKE files
+- **CRITICAL**: ALWAYS use `spike/` directory for SPIKE code
+- **CRITICAL**: ALWAYS use `spike_` prefix for SPIKE files
 
 ## Integration with Other Processes
 
@@ -105,6 +119,9 @@ spike/
 - **Requirements Gathering**: Use findings for requirements
 - **Story Card Creation**: Create story cards based on findings
 - **Development**: Use findings for development approach
+- **MANDATORY**: If story card contains "proof of concept" or "POC", create SPIKE first
+- **MANDATORY**: Use SPIKE findings to inform story card implementation approach
+- **MANDATORY**: Reference SPIKE in story card development plan
 
 ### Troubleshooting SPIKE Integration
 - **Root Cause Analysis**: Use findings for RCA
@@ -158,12 +175,24 @@ spike/
 
 ## Common Pitfalls
 
+### MANDATORY Pre-Action Checklist
+**Before creating any file, ask yourself**:
+1. **Is this a proof of concept?** → Use SPIKE
+2. **Is this technical uncertainty?** → Use SPIKE
+3. **Is this a prototype?** → Use SPIKE
+4. **Am I using correct naming?** → `spike_[ID]_[description].[ext]`
+5. **Am I using correct directory?** → `spike/` directory
+6. **Am I following SPIKE process?** → Check SPIKE template
+
 ### Avoid These Mistakes
 - **Scope Creep**: Don't expand beyond original objective
 - **Time Overrun**: Don't exceed time-boxed duration
 - **Single Option**: Don't present only one option
 - **No Evidence**: Don't make recommendations without evidence
 - **Poor Documentation**: Don't skip documentation
+- **Wrong Naming**: Don't use `test_*` for SPIKE files
+- **Wrong Directory**: Don't use `demo/` for SPIKE files
+- **Missing SPIKE**: Don't skip SPIKE for proof of concept work
 
 ### Success Factors
 - **Clear Objective**: Well-defined investigation goal

@@ -1,0 +1,34 @@
+{
+    "permissions": {
+      "allow": [
+        "Shell(python)",
+        "Shell(pip)", 
+        "Shell(pytest)",
+        "Shell(uvicorn)",
+        "Shell(vercel)",
+        "Shell(npx)",
+        "Shell(npm)",
+        "Shell(ls)",
+        "Shell(grep)",
+        "Shell(head)",
+        "Shell(tail)",
+        "Read(**)",
+        "Write(docs/**)",
+        "Write(demo/**)",
+        "Write(tasks/**)",
+        "Write(tests/**)",
+        "Write(api_platform/**)",
+        "Write(sql/**)",
+        "Write(backlogs/**)",
+        "Write(trigger/**)",
+        "Write(scripts/**)"
+      ],
+      "deny": [
+        "Shell(rm)",
+        "Read(.env*)",
+        "Read(**/*.key)",
+        "Write(requirements/**)",
+        "Write(legacy/**)"
+      ]
+    }
+  }

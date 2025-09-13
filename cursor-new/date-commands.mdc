@@ -1,6 +1,6 @@
 ---
 description: Date Commands Reference for All Rules
-globs: ["**/*.md", "**/*.py", "**/*.js", "**/*.ts", "**/*.java", "**/*.go", "**/*.rs"]
+globs: ["**/*.md", "**/*.py", "**/*.js", "**/*.ts", "**/*.java", "**/*.go", "**/*.rs","**/*.md"]
 alwaysApply: false
 ---
 

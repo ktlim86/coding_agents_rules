@@ -18,7 +18,7 @@ Title: [Clear, descriptive title]
 Story Points: [XS(1), S(3), M(5), MH(8), L(13), XL(21)] - Note: L and XL must be broken down (de-risking)
 Priority: [High/Medium/Low]
 Status: [Not Started → Pending PO Approval → Dev In Progress → Testing In Progress → Pending PO Accepted → Done]
-Created Date: [YYYY-MM-DD]
+Created Date: [YYYY-MM-DD HH:MM:SS] (Use @date-commands.mdc)
 Assigned To: [Developer/Team]
 ```
 
@@ -45,17 +45,59 @@ TC3: [Test case description] → Maps to AC2
 ...
 ```
 
+### MANDATORY PRODUCT OWNER APPROVAL SECTIONS
+
+#### Gate 1: Story Card Approval
+```
+## Gate 1: Story Card Approval
+- [ ] Story Card Reviewed and Approved
+- Date: [YYYY-MM-DD HH:MM:SS]
+- Approved By: [Product Owner Name]
+- Conditions: [Any conditions or constraints]
+- Status: [Approved/Pending/Rejected]
+- Includes: Story card, implementation approach, development plan, testing strategy
+- Approval Notes: [Any additional notes or requirements]
+```
+
+#### Gate 2: Testing Evidence Acceptance
+```
+## Gate 2: Testing Evidence Acceptance
+- [ ] Testing Evidence Accepted
+- Date: [YYYY-MM-DD HH:MM:SS]
+- Accepted By: [Product Owner Name]
+- Evidence Reference: [Reference to @integration-testing/evidence-based-testing.mdc]
+- Test Results: [Summary of test results and evidence]
+- Screenshots/Validation: [Evidence of functionality]
+- Acceptance Criteria Met: [Confirmation all criteria are met]
+- Status: [Accepted/Pending/Rejected]
+```
+
+#### Gate 3: Deployment Approval
+```
+## Gate 3: Deployment Approval
+- [ ] Deployment Approved
+- Date: [YYYY-MM-DD HH:MM:SS]
+- Approved By: [Product Owner Name]
+- Conditions: [Any conditions or constraints]
+- Status: [Approved/Pending/Rejected]
+- Deployment Plan: [Approved deployment approach]
+- Rollback Strategy: [Approved rollback plan]
+```
+
 ### Development Information
 ```
-Start Date: [YYYY-MM-DD HH:MM:SS Singapore Time]
-End Date: [YYYY-MM-DD HH:MM:SS Singapore Time] (When story is marked as Done)
-Duration: [X hours/days]
-Development Notes: [Key decisions, challenges, discoveries]
+Start Date: (Set when Gate 1 approval is obtained)
+End Date: (Set when story is marked as Done)
+Duration: 
+Development Notes: 
 ```
 
 ### Date Commands
 - **Reference**: See `@date-commands.mdc` for date/time commands
 - **Format**: Use `yyyy-MM-dd HH:mm:ss` format for all date fields
+- **Created Date**: Use date command when creating story card (in Basic Information)
+- **Start Date**: Use date command when Gate 1 approval is obtained (in Development Information)
+- **End Date**: Use date command when story is marked as Done (in Development Information)
 
 
 ### Dependencies
@@ -75,6 +117,8 @@ Internal Dependencies:
 - [ ] Documentation updated
 - [ ] No critical bugs
 - [ ] Product Owner acceptance
+- [ ] All approval gates completed
+- [ ] Approval documentation complete
 ```
 
 ## Story Card Creation Process
@@ -145,11 +189,40 @@ Internal Dependencies:
 5. **Pending PO Accepted**: Testing complete, awaiting PO acceptance
 6. **Done**: Story completed and accepted
 
+### MANDATORY APPROVAL PROCESS
+
+#### Gate 1: Story Card Approval
+1. Create story card using this template
+2. Fill in all required sections
+3. Develop implementation approach with pros/cons
+4. Create development plan and timeline
+5. Define testing strategy and test cases
+6. Present complete package to Product Owner
+7. **WAIT for explicit approval**
+8. Document approval in Gate 1: Story Card Approval section
+9. **THEN proceed with development and testing**
+
+#### Gate 2: Testing Evidence Acceptance
+1. Complete development and testing
+2. Gather evidence-based testing results
+3. Reference `@integration-testing/evidence-based-testing.mdc`
+4. Present test results, screenshots, and validation evidence
+5. Demonstrate all acceptance criteria are met
+6. **WAIT for explicit acceptance**
+7. Document acceptance in Gate 2: Testing Evidence Acceptance section
+8. **THEN proceed to deployment planning**
+
+#### Gate 3: Deployment Approval
+1. Develop deployment plan and rollback strategy
+2. Present deployment approach to Product Owner
+3. **WAIT for explicit approval**
+4. Document approval in Gate 3: Deployment Approval section
+5. **THEN proceed with deployment**
+
 ### Approval Gates
-- **PO Approval**: Required before development starts
-- **Development Complete**: All acceptance criteria met
-- **Testing Complete**: All test cases pass
-- **PO Acceptance**: Final acceptance by Product Owner
+- **Gate 1: Story Card Approval**: Required before development and testing starts
+- **Gate 2: Testing Evidence Acceptance**: Required after development and testing are completed
+- **Gate 3: Deployment Approval**: Required before any production changes
 
 ### Status Updates
 - **Regular Updates**: Update status throughout development
